@@ -9,10 +9,7 @@
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        MouseDown="Window_MouseDown"
-        MouseMove="Window_MouseMove"
-        MouseUp="Window_MouseUp"
-        Title="Проект" Height="450" Width="800">
+        Title="Проект" Height="600" Width="920">
     
       <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
 

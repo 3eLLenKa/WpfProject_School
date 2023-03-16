@@ -57,37 +57,5 @@ namespace WpfProject_School
                 //else throw new Exception("Error Ocured: Account is not autorized.");
             }
         }
-
-        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left)
-            {
-                isDragging = true;
-                startPoint = e.GetPosition(this);
-            }
-        }
-
-        private void Window_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (isDragging)
-            {
-                Point currentPosition = e.GetPosition(this);
-                double deltaX = currentPosition.X - startPoint.X;
-                double deltaY = currentPosition.Y - startPoint.Y;
-
-                this.Left += deltaX;
-                this.Top += deltaY;
-
-                startPoint = currentPosition;
-            }
-        }
-
-        private void Window_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            if (e.ChangedButton == MouseButton.Left)
-            {
-                isDragging = false;
-            }
-        }
     }
 }

@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfProject_School
+namespace WpfProject_School.Core
 {
     class ObservableObject : INotifyPropertyChanged
     {

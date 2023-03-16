@@ -4,9 +4,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfProject_School"
+      xmlns:viewModel="clr-namespace:WpfProject_School.MVVM.ViewModel"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="920"
       Title="UIPage">
+
+    <Page.DataContext>
+        <viewModel:MainViewModel/>
+    </Page.DataContext>
 
     <Border Background="#272537" CornerRadius="20">
         <Grid>
@@ -25,10 +30,10 @@
                 </TextBlock.Effect>
             </TextBlock>
             <StackPanel Grid.Row="1">
-                <RadioButton Content="Главная" Height="50" FontSize="15" Foreground="White" Style="{StaticResource MenuButtonStyle}"/>
-                <RadioButton Content="Настройки" Height="50" FontSize="15" Foreground="White" Style="{StaticResource MenuButtonStyle}"/>
+                <RadioButton Content="Главная" Height="50" FontSize="15" Foreground="White" IsChecked="True" Command="{Binding GeneralViewCommand}" Style="{StaticResource MenuButtonStyle}"/>
+                <RadioButton Content="Настройки" Height="50" FontSize="15" Foreground="White" Command="{Binding SettingsViewCommand}" Style="{StaticResource MenuButtonStyle}"/>
             </StackPanel>
-            <ContentControl x:Name="ContentContainer" Grid.Row="1" Grid.Column="1" Margin="10"/>
+            <ContentControl x:Name="ContentContainer" Grid.Row="1" Grid.Column="1" Margin="10" Content="{Binding CurrentView}"/>
         </Grid>
     </Border>
 </Page>

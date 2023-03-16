@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfProject_School
+namespace WpfProject_School.MVVM.ViewModel
 {
-    class HomeViewModel
+    class SettingsViewModel
     {
+
     }
 }
