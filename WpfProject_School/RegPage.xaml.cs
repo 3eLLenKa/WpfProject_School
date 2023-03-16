@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 using System.Data;
 
 namespace WpfProject_School
@@ -87,26 +88,13 @@ namespace WpfProject_School
                 return true;
             }
 
-            else if (passwordBoxDouble.Password != passwordBox.Password)
-            {
-                passwordBoxDouble.ToolTip = "Пароли не совпадают!";
-                passwordBoxDouble.Background = Brushes.Red;
-
-                passwordBox.Background = Brushes.Transparent;
-                passwordBox.ToolTip = null;
-
-                return true;
-            }
-
             else
             {
                 textBoxLogin.ToolTip = null;
                 passwordBox.ToolTip = null;
-                passwordBoxDouble.ToolTip = null;
 
                 textBoxLogin.Background = Brushes.Transparent;
                 passwordBox.Background = Brushes.Transparent;
-                passwordBoxDouble.Background = Brushes.Transparent;
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -125,7 +113,7 @@ namespace WpfProject_School
                         else
                         {
                             Console.WriteLine("Новый аккаунт успешно зарегестрирован!");
-                            NavigationService.Navigate(new UIPage());
+                            NavigationService.Navigate(new AuthPage());
                             return false;
                         }
                     }
@@ -133,4 +121,4 @@ namespace WpfProject_School
             }
         }
     }
-}
+} 

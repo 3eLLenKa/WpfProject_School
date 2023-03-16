@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using Newtonsoft.Json;
 
 namespace WpfProject_School
 {
@@ -26,8 +28,10 @@ namespace WpfProject_School
         public AuthPage()
         {
             InitializeComponent();
+            //LoadLoginInfo();
         }
-        private void AuthButton_Click(object sender, RoutedEventArgs e)
+
+        private void RegNavigate(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new RegPage());
         }
@@ -52,7 +56,16 @@ namespace WpfProject_School
 
                     if (count > 0)
                     {
-                        MessageBox.Show("Вход выполнен!");
+                        // сохраняем информацию о входе пользователя в файл
+                        var loginInfo = new { Login = login, IsLoggedIn = true };
+                        string loginJson = JsonConvert.SerializeObject(loginInfo);
+
+                        using (StreamWriter sw = File.CreateText(@"C:\Logs\currentUser.json"))
+                        {
+                            sw.Write(loginJson);
+                        }
+
+                        MessageBox.Show("Вы усешно вошли в аккаунт", "Информация о входе.");
                         NavigationService.Navigate(new UIPage());
                     }
                     else

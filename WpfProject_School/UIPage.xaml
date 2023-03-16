@@ -4,13 +4,31 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfProject_School"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="UIPage">
 
-    <Grid Background="white">
-        <TextBlock Text=" Личный кабинет" FontSize="30" FontWeight="Bold"/>
-        <Button x:Name="deleteAccount" Content="Удалить аккаунт" Margin="10,63,638,355" RenderTransformOrigin="0.935,0.519"/>
-    </Grid>
+    <Border Background="#272537" CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="TypeBoost" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="22">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Главная" Height="50" FontSize="15" Foreground="White" Style="{StaticResource MenuButtonStyle}"/>
+                <RadioButton Content="Настройки" Height="50" FontSize="15" Foreground="White" Style="{StaticResource MenuButtonStyle}"/>
+            </StackPanel>
+            <ContentControl x:Name="ContentContainer" Grid.Row="1" Grid.Column="1" Margin="10"/>
+        </Grid>
+    </Border>
 </Page>
