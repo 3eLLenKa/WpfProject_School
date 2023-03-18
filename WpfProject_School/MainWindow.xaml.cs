@@ -25,11 +25,12 @@ namespace WpfProject_School
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool isDragging = false;
-        private Point startPoint;
+        public static MainWindow window;
 
         public MainWindow()
         {
+            window = this;
+
             try
             {
                 InitializeComponent();
@@ -40,6 +41,14 @@ namespace WpfProject_School
             {
                 // Handle the exception
                 MessageBox.Show("An error occurred: " + ex.Message);
+            }
+        }
+
+        private void MovingWindow(object sender, RoutedEventArgs e)
+        {
+            if (Mouse.LeftButton == MouseButtonState.Pressed)
+            {
+                MainWindow.window.DragMove();
             }
         }
 
@@ -56,6 +65,25 @@ namespace WpfProject_School
                 }
                 //else throw new Exception("Error Ocured: Account is not autorized.");
             }
+        }
+
+        private void CloseClient(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MaximizeClient(object sender, EventArgs e)
+        {
+            if (WindowState == WindowState.Maximized)
+            {
+                WindowState = WindowState.Normal;
+            }
+            else WindowState = WindowState.Maximized;
+        }
+
+        private void MinimizeClient(object sender, EventArgs e)
+        {
+            Application.Current.MainWindow.WindowState = WindowState.Minimized;
         }
     }
 }

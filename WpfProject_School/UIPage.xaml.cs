@@ -44,11 +44,5 @@ namespace WpfProject_School
                 NavigationService.Navigate(new AuthPage());
             }
         }
-
-        private void OpenMenu(object sender, RoutedEventArgs e)
-        {
-            var showAnim = FindResource("ShowMenu") as Storyboard;
-            showAnim.Begin(this);
-        }
     }
 }
