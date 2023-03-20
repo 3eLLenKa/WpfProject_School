@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,23 @@ namespace WpfProject_School.MVVM.View
         public SettingsView()
         {
             InitializeComponent();
+        }
+
+        private void LeaveAccount(object sender, RoutedEventArgs e)
+        {
+            if (File.Exists(@"C:\Logs\currentUser.json"))
+            {
+                var loginInfo = new { Login = "", IsLoggedIn = false };
+                string loginJson = JsonConvert.SerializeObject(loginInfo);
+
+                using (StreamWriter sw = File.CreateText(@"C:\Logs\currentUser.json"))
+                {
+                    sw.Write(loginJson);
+                }
+
+                var mainFrame = (Window.GetWindow(this)?.FindName("MainFrame") as Frame);
+                mainFrame?.Navigate(new AuthPage());
+            }
         }
     }
 }

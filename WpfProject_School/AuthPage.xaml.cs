@@ -66,7 +66,9 @@ namespace WpfProject_School
                         }
 
                         MessageBox.Show("Вы усешно вошли в аккаунт", "Информация о входе.");
-                        NavigationService.Navigate(new UIPage());
+
+                        var mainFrame = (Window.GetWindow(this)?.FindName("MainFrame") as Frame);
+                        mainFrame?.Navigate(new UIPage());
                     }
                     else
                     {

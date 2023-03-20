@@ -27,22 +27,5 @@ namespace WpfProject_School
         {
             InitializeComponent();
         }
-
-        private bool isMenuOpen = false;
-        private void LeaveAccount(object sender, RoutedEventArgs e)
-        {
-            if (File.Exists(@"C:\Logs\currentUser.json"))
-            {
-                var loginInfo = new { Login = "", IsLoggedIn = false };
-                string loginJson = JsonConvert.SerializeObject(loginInfo);
-
-                using (StreamWriter sw = File.CreateText(@"C:\Logs\currentUser.json"))
-                {
-                    sw.Write(loginJson);
-                }
-
-                NavigationService.Navigate(new AuthPage());
-            }
-        }
     }
 }

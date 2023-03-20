@@ -10,7 +10,7 @@
       Title="AuthPage">
 
     <Page.Background>
-        <ImageBrush ImageSource="C:\Users\alexk\OneDrive\Рабочий стол\bg-01.jpg"/>
+        <ImageBrush ImageSource="\Images\background.jpg"/>
     </Page.Background>
 
     <Grid>

@@ -8,6 +8,6 @@
              d:DesignHeight="450" d:DesignWidth="800"
              Background="#1B1B1B">
     <Grid>
-            
+        <Button Click="LeaveAccount" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Выйти" Height="36" Margin="0,12,14,0" Cursor=""/>
     </Grid>
 </UserControl>
