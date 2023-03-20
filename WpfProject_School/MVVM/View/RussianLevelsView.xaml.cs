@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace WpfProject_School.MVVM.View
 {
     /// <summary>
-    /// Логика взаимодействия для GeneralView.xaml
+    /// Логика взаимодействия для RussianLevelsView.xaml
     /// </summary>
-    public partial class GeneralView : UserControl
+    public partial class RussianLevelsView : UserControl
     {
-        public GeneralView()
+        public RussianLevelsView()
         {
             InitializeComponent();
-        }
-
-        private void LevelsPageClick(object sender, RoutedEventArgs e)
-        {
-            NavigationService.GetNavigationService(this).Navigate(new LevelsPage());
         }
     }
 }

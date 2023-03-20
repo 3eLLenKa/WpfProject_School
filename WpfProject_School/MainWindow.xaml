@@ -10,6 +10,7 @@
         Background="Transparent"
         AllowsTransparency="True"
         Title="Проект" Height="600" Width="920" MouseDown="MovingWindow">
+    
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
         

@@ -13,21 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfProject_School.MVVM.View
+namespace WpfProject_School
 {
     /// <summary>
-    /// Логика взаимодействия для GeneralView.xaml
+    /// Логика взаимодействия для LevelsPage.xaml
     /// </summary>
-    public partial class GeneralView : UserControl
+    public partial class LevelsPage : Page
     {
-        public GeneralView()
+        public LevelsPage()
         {
             InitializeComponent();
         }
 
-        private void LevelsPageClick(object sender, RoutedEventArgs e)
+        public void MainMenuClick(object sender, RoutedEventArgs e)
         {
-            NavigationService.GetNavigationService(this).Navigate(new LevelsPage());
+            NavigationService.GetNavigationService(this).GoBack();
         }
     }
 }

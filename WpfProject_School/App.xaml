@@ -26,6 +26,14 @@
                 <view:SettingsView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:RussianLevelsViewModel}">
+                <view:RussianLevelsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EnglishLevelsViewModel}">
+                <view:EnglishLevelsView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
