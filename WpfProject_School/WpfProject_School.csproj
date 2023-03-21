@@ -73,6 +73,78 @@
     <Compile Include="LevelsPage.xaml.cs">
       <DependentUpon>LevelsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Levels\RussianLevels\LettersLevels\EighthLettersLevelPage.xaml.cs">
+      <DependentUpon>EighthLettersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\LettersLevels\FifthLettersLevelPage.xaml.cs">
+      <DependentUpon>FifthLettersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\LettersLevels\FirstLettersLevelPage.xaml.cs">
+      <DependentUpon>FirstLettersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\LettersLevels\FourthLettersLevelPage.xaml.cs">
+      <DependentUpon>FourthLettersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\LettersLevels\SecondLettersLevelPage.xaml.cs">
+      <DependentUpon>SecondLettersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\LettersLevels\SeventhLettersLevelPage.xaml.cs">
+      <DependentUpon>SeventhLettersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\LettersLevels\SixthLettersLevelPage.xaml.cs">
+      <DependentUpon>SixthLettersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\LettersLevels\ThirdLettersLevelPage.xaml.cs">
+      <DependentUpon>ThirdLettersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\NumbersAndSymbolsLevels\EighthNumbersLevelPage.xaml.cs">
+      <DependentUpon>EighthNumbersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\NumbersAndSymbolsLevels\FifthNumbersLevelPage.xaml.cs">
+      <DependentUpon>FifthNumbersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\NumbersAndSymbolsLevels\FirstNumbersLevelPage.xaml.cs">
+      <DependentUpon>FirstNumbersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\NumbersAndSymbolsLevels\FourthNumbersLevelPage.xaml.cs">
+      <DependentUpon>FourthNumbersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\NumbersAndSymbolsLevels\SecondNumbersLevelPage.xaml.cs">
+      <DependentUpon>SecondNumbersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\NumbersAndSymbolsLevels\SeventhNumbersLevelPage.xaml.cs">
+      <DependentUpon>SeventhNumbersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\NumbersAndSymbolsLevels\SixthNumbersLevelPage.xaml.cs">
+      <DependentUpon>SixthNumbersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\NumbersAndSymbolsLevels\ThirdNumbersLevelPage.xaml.cs">
+      <DependentUpon>ThirdNumbersLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\PunctuationMarksLevels\FirstPunctuationLevelPage.xaml.cs">
+      <DependentUpon>FirstPunctuationLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\PunctuationMarksLevels\FourthPunctuationLevelPage.xaml.cs">
+      <DependentUpon>FourthPunctuationLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\PunctuationMarksLevels\SecondPunctuationLevelPage.xaml.cs">
+      <DependentUpon>SecondPunctuationLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\PunctuationMarksLevels\ThirdPunctuationLevelPage.xaml.cs">
+      <DependentUpon>ThirdPunctuationLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\WordsLevels\FirstWordsLevelPage.xaml.cs">
+      <DependentUpon>FirstWordsLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\WordsLevels\FourthWordsLevelPage.xaml.cs">
+      <DependentUpon>FourthWordsLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\WordsLevels\SecondWordsLevelPage.xaml.cs">
+      <DependentUpon>SecondWordsLevelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\RussianLevels\WordsLevels\ThirdWordsLevelPage.xaml.cs">
+      <DependentUpon>ThirdWordsLevelPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MVVM\ViewModel\EnglishLevelsViewModel.cs" />
     <Compile Include="MVVM\ViewModel\GeneralViewModel.cs" />
     <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
@@ -103,6 +175,102 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LevelsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\LettersLevels\EighthLettersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\LettersLevels\FifthLettersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\LettersLevels\FirstLettersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\LettersLevels\FourthLettersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\LettersLevels\SecondLettersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\LettersLevels\SeventhLettersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\LettersLevels\SixthLettersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\LettersLevels\ThirdLettersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\NumbersAndSymbolsLevels\EighthNumbersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\NumbersAndSymbolsLevels\FifthNumbersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\NumbersAndSymbolsLevels\FirstNumbersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\NumbersAndSymbolsLevels\FourthNumbersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\NumbersAndSymbolsLevels\SecondNumbersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\NumbersAndSymbolsLevels\SeventhNumbersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\NumbersAndSymbolsLevels\SixthNumbersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\NumbersAndSymbolsLevels\ThirdNumbersLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\PunctuationMarksLevels\FirstPunctuationLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\PunctuationMarksLevels\FourthPunctuationLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\PunctuationMarksLevels\SecondPunctuationLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\PunctuationMarksLevels\ThirdPunctuationLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\WordsLevels\FirstWordsLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\WordsLevels\FourthWordsLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\WordsLevels\SecondWordsLevelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\RussianLevels\WordsLevels\ThirdWordsLevelPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -199,6 +367,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Levels\EnglishLevels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.7.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.7.1\build\MaterialDesignThemes.targets')" />

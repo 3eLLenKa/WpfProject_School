@@ -22,7 +22,7 @@
             <ScrollViewer Height="425" VerticalScrollBarVisibility="Auto">
                 <WrapPanel HorizontalAlignment="Left">
                     <UniformGrid Rows="6" Columns="4">
-                        <Button Width="150" Height="150" Background="#844eff">
+                        <Button Content="ва ол" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#844eff">
                             <Button.Clip>
                                 <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
                             </Button.Clip> 
