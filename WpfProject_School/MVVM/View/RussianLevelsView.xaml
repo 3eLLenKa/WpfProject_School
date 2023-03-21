@@ -5,9 +5,48 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfProject_School.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
-             Background="Gray">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="600" d:DesignWidth="920">
+
+    <StackPanel>
+        <StackPanel Width="120" HorizontalAlignment="Left">
+            <TextBlock Text="Уровни" HorizontalAlignment="Center" Foreground="White" FontSize="28" Width="100" Height="42"/>
+        </StackPanel>
+        <StackPanel>
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="Margin" Value="10"/>
+                </Style>
+            </StackPanel.Resources>
+            <ScrollViewer Height="425" VerticalScrollBarVisibility="Auto">
+                <WrapPanel HorizontalAlignment="Left">
+                    <UniformGrid Rows="6" Columns="4">
+                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
+                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#ecff4e" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
+                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#ecff4e" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
+                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#ecff4e" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
+                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background=" #ecff4e" CornerRadius="10"/> 
+                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
+                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#ecff4e" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
+                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
+                        <Border Width="150" Height="150" Background="#ecff4e" CornerRadius="10"/>
+                    </UniformGrid>
+                </WrapPanel>
+            </ScrollViewer>
+        </StackPanel>
+    </StackPanel>
 </UserControl>
