@@ -6,44 +6,142 @@
              xmlns:local="clr-namespace:WpfProject_School.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="920">
+    
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </UserControl.Resources>
 
     <StackPanel>
         <StackPanel Width="120" HorizontalAlignment="Left">
             <TextBlock Text="Уровни" HorizontalAlignment="Center" Foreground="White" FontSize="28" Width="100" Height="42"/>
         </StackPanel>
         <StackPanel>
-            <StackPanel.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="Margin" Value="10"/>
-                </Style>
-            </StackPanel.Resources>
+            
             <ScrollViewer Height="425" VerticalScrollBarVisibility="Auto">
                 <WrapPanel HorizontalAlignment="Left">
                     <UniformGrid Rows="6" Columns="4">
-                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
-                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#ecff4e" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
-                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#ecff4e" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
-                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#ecff4e" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
-                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background=" #ecff4e" CornerRadius="10"/> 
-                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
-                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#ecff4e" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#844eff" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#4e99ff" CornerRadius="10"/>
-                        <Border Width="150" Height="153" Background="#4eff91" CornerRadius="10"/>
-                        <Border Width="150" Height="150" Background="#ecff4e" CornerRadius="10"/>
+                        <Button Width="150" Height="150" Background="#844eff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip> 
+                        </Button>
+                        <Button Width="150" Height="150" Background="#4e99ff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="153" Background="#4eff91">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#ecff4e">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#844eff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#4e99ff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="153" Background="#4eff91">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#ecff4e">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#844eff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#4e99ff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="153" Background="#4eff91">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#ecff4e">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#844eff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#4e99ff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="153" Background="#4eff91">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#ecff4e">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#844eff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#4e99ff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="153" Background="#4eff91">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#ecff4e">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#844eff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#4e99ff">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="153" Background="#4eff91">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                            </Button.Clip>
+                        </Button>
+                        <Button Width="150" Height="150" Background="#ecff4e">
+                            <Button.Clip>
+                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                            </Button.Clip>
+                        </Button>
                     </UniformGrid>
                 </WrapPanel>
             </ScrollViewer>

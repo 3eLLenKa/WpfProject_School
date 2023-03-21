@@ -1,17 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
+using WpfProject_School.Levels.RussianLevels.LettersLevels;
+using WpfProject_School.Levels.RussianLevels.WordsLevels;
+using WpfProject_School.Levels.RussianLevels.NumbersAndSymbolsLevels;
+using WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels;
 
 namespace WpfProject_School.MVVM.View
 {
@@ -23,6 +16,140 @@ namespace WpfProject_School.MVVM.View
         public RussianLevelsView()
         {
             InitializeComponent();
+        }
+
+        //EventArgs letters levels buttons
+
+        private void FirstLettersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new FirstLettersLevelPage());
+        }
+
+        private void SecondLettersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new SecondLettersLevelPage());
+        }
+
+        private void ThirdLettersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new ThirdLettersLevelPage());
+        }
+
+        private void FourthLettersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new FourthLettersLevelPage());
+        }
+
+        private void FifthLettersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new FifthLettersLevelPage());
+        }
+
+        private void SixthLettersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new SixthLettersLevelPage());
+        }
+
+        private void SeventhLettersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new SeventhLettersLevelPage());
+        }
+
+        private void EighthLettersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new EighthLettersLevelPage());
+        }
+
+
+        //Event Args word levels buttons
+
+
+        private void FirstWordsPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new FirstWordsLevelPage());
+        }
+
+        private void SecondWordsPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new SecondWordsLevelPage());
+        }
+
+        private void ThirdWordsPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new ThirdWordsLevelPage());
+        }
+
+        private void FourthWordsPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new FourthWordsLevelPage());
+        }
+
+
+        //Event Args numbers and symbols levels buttons
+
+
+        private void FirstNumbersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new FirstNumbersLevelPage());
+        }
+
+        private void SecondNumbersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new SecondNumbersLevelPage());
+        }
+
+        private void ThirdNumbersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new ThirdNumbersLevelPage());
+        }
+
+        private void FourthNumbersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new FourthNumbersLevelPage());
+        }
+
+        private void FifthNumbersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new FifthNumbersLevelPage());
+        }
+
+        private void SixthNumbersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new SixthNumbersLevelPage());
+        }
+
+        private void SeventhNumbersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new SeventhNumbersLevelPage());
+        }
+
+        private void EighthNumbersPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new EighthNumbersLevelPage());
+        }
+
+
+        //Event Args numbers and symbols levels buttons
+
+
+        private void FirstPunctuationPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new FirstPunctuationLevelPage());
+        }
+
+        private void SecondPunctuationPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new SecondPunctuationLevelPage());
+        }
+
+        private void ThirdPunctuationPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new ThirdPunctuationLevelPage());
+        }
+
+        private void FourthPunctuationPageNavigation(object sender, NavigationEventArgs e)
+        {
+            NavigationService.GetNavigationService(this).Navigate(new FourthPunctuationLevelPage());
         }
     }
 }

@@ -8,6 +8,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/ButtonAnimationStyle.xaml"/>
                 <ResourceDictionary Source="Styles/RadioButtonStyle.xaml"/>
                 <ResourceDictionary Source="Styles/CloseButtonStyle.xaml"/>
                 <ResourceDictionary Source="Styles/MaximizeButtonStyle.xaml"/>
