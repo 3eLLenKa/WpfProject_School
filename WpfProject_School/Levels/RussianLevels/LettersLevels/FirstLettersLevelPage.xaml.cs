@@ -26,27 +26,89 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             ProgressTextBox.Focus();
         }
 
-        private void ProgressTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        private bool isStarted = false;
+        private int currentLength = 0;
+
+        private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
+        {
+        { Key.A, "ф" },
+        { Key.B, "и" },
+        { Key.C, "с" },
+        { Key.D, "в" },
+        { Key.E, "у" },
+        { Key.F, "а" },
+        { Key.G, "п" },
+        { Key.H, "р" },
+        { Key.I, "ш" },
+        { Key.J, "о" },
+        { Key.K, "л" },
+        { Key.L, "д" },
+        { Key.M, "ь" },
+        { Key.N, "т" },
+        { Key.O, "щ" },
+        { Key.P, "з" },
+        { Key.Q, "й" },
+        { Key.R, "к" },
+        { Key.S, "ы" },
+        { Key.T, "е" },
+        { Key.U, "г" },
+        { Key.V, "м" },
+        { Key.W, "ц" },
+        { Key.X, "ч" },
+        { Key.Y, "н" },
+        { Key.Z, "я" },
+        {Key.Space, " " },
+        {Key.Enter, "enter" }
+        };
+
+        private async void ProgressTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             e.Handled = true;
-            
-            if (e.Key == Key.Space)
+
+            string key = EnglishToRussianLetters[e.Key];
+            int progressLength = ProgressTextBox.Text.Length;
+
+            //MessageBox.Show(key);
+
+            if (!isStarted)
             {
-                ProgressTextBox.Foreground = Brushes.Gray;
-                ProgressTextBox.Text = "вввооо ввово оввоо вовов оовов во ов вовво овово вово вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо аоаао оаоао вао ава вова авао оао лллааа ллала аллаа лалал аалал вал ла лалла алала вол лов алла вал ава вввллл ввлвл лввлл влвлв ллвлв вова лов влввл лвлвл алло олав вола лола лова вввааа аавав ваавв ава вава авава ввава вава алл ава в оао лала оооллл оолол лоолл олово лол ололо ллоло лава ово лово лол во овал аоавл воаал влвао лаоов лвлоа алвво вово лава овал алла олав олово вал алло";
-
-                string text = ProgressTextBox.Text;
-
-                if (e.Key == Key.Enter)
+                if (key == " ")
                 {
-                    ProgressTextBox.Foreground = Brushes.Black;
+                    ProgressTextBox.Foreground = Brushes.Gray;
+                    ProgressTextBox.Text = "ввово вовов овово вовоо оовов во ов вовво овово вово вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо аоаао оаоао вао ава вова авао оао лллааа ллала аллаа лалал аалал вал ла лалла алала вол лов алла вал ава вввллл ввлвл лввлл влвлв ллвлв вова лов влввл лвлвл алло олав вола лола лова вввааа аавав ваавв ава вава авава ввава вава алл ава в оао лала оооллл оолол лоолл олово лол ололо ллоло лава ово лово лол во овал аоавл воаал влвао лаоов лвлоа алвво вово лава овал алла олав олово вал алло";
+                    isStarted = true;
                 }
-            } 
-        }
+            }
+            else
+            {
+                while (currentLength < progressLength)
+                {
+                    if (key == ProgressTextBox.Text[currentLength].ToString())
+                    {
+                        // Окрашивание текущей буквы в черный цвет
+                        ProgressTextBox.SelectionStart = currentLength;
+                        ProgressTextBox.SelectionLength = 1;
+                        ProgressTextBox.SelectionTextBrush = Brushes.AliceBlue;
 
-        private void ProgressTextBox_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+                        currentLength++;
+                    }
+
+                    // Ожидание нажатия клавиши
+                    while (true)
+                    {
+                        await Task.Delay(50);
+                        if (Keyboard.IsKeyDown(e.Key))
+                        {
+                            key = EnglishToRussianLetters[e.Key];
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        private void ProgressTextBox_PreviewMouseDown(object sender, MouseEventArgs e)
         {
-            //e.Handled = true;
+            e.Handled = true;
         }
     }
 }
