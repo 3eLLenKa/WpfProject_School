@@ -26,8 +26,8 @@
             </TextBlock>
 
             <StackPanel Grid.Row="1"/>
-            <ProgressBar Height="10" Width="300" Grid.Column="1" Minimum="0" Maximum="100" Value="0" Margin="10,10,410,50" />
-            <TextBox x:Name="ProgressTextBox" TextWrapping="NoWrap" Text="Пробел - старт, ESC - Стоп/Выход" PreviewKeyDown="ProgressTextBox_PreviewKeyDown" PreviewMouseDown="ProgressTextBox_PreviewMouseDown" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Background="White" IsReadOnly="True" IsReadOnlyCaretVisible="False" Margin="10,35,10,-34"/>
+            <ProgressBar x:Name="progressBar" Height="10" Width="300" Grid.Column="1" Minimum="0" Maximum="494" Value="0" Margin="10,10,410,50" />
+            <TextBox x:Name="ProgressTextBox" TextWrapping="NoWrap" Padding="10" Text="Пробел - старт, ESC - Стоп/Выход" PreviewKeyDown="ProgressTextBox_PreviewKeyDown" PreviewMouseDown="ProgressTextBox_PreviewMouseDown" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Background="White" IsReadOnly="True" IsReadOnlyCaretVisible="False" Margin="10,35,10,-34"/>
         </Grid>
     </Border>
 </Page>

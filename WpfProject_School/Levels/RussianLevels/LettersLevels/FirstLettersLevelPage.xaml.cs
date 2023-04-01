@@ -28,6 +28,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
         private bool isStarted = false;
         private int currentLength = 0;
+        private string letters = "ввово вовов овово вовоо оовов во ов вовво овово вово вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо аоаао оаоао вао ава вова авао оао лллааа ллала аллаа лалал аалал вал ла лалла алала вол лов алла вал ава вввллл ввлвл лввлл влвлв ллвлв вова лов влввл лвлвл алло олав вола лола лова вввааа аавав ваавв ава вава авава ввава вава алл ава в оао лала оооллл оолол лоолл олово лол ололо ллоло лава ово лово лол во овал аоавл воаал влвао лаоов лвлоа алвво вово лава овал алла олав олово вал алло";
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
@@ -57,52 +58,38 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         { Key.X, "ч" },
         { Key.Y, "н" },
         { Key.Z, "я" },
-        {Key.Space, " " },
-        {Key.Enter, "enter" }
+        {Key.Space, " " }
         };
 
-        private async void ProgressTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        private void ProgressTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             e.Handled = true;
 
             string key = EnglishToRussianLetters[e.Key];
             int progressLength = ProgressTextBox.Text.Length;
 
-            //MessageBox.Show(key);
-
             if (!isStarted)
             {
                 if (key == " ")
                 {
                     ProgressTextBox.Foreground = Brushes.Gray;
-                    ProgressTextBox.Text = "ввово вовов овово вовоо оовов во ов вовво овово вово вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо аоаао оаоао вао ава вова авао оао лллааа ллала аллаа лалал аалал вал ла лалла алала вол лов алла вал ава вввллл ввлвл лввлл влвлв ллвлв вова лов влввл лвлвл алло олав вола лола лова вввааа аавав ваавв ава вава авава ввава вава алл ава в оао лала оооллл оолол лоолл олово лол ололо ллоло лава ово лово лол во овал аоавл воаал влвао лаоов лвлоа алвво вово лава овал алла олав олово вал алло";
+                    ProgressTextBox.Text = letters;
+                    ProgressTextBox.TextAlignment = TextAlignment.Center;
                     isStarted = true;
                 }
             }
             else
             {
-                while (currentLength < progressLength)
+                if (key == ProgressTextBox.Text[currentLength].ToString())
                 {
-                    if (key == ProgressTextBox.Text[currentLength].ToString())
-                    {
-                        // Окрашивание текущей буквы в черный цвет
-                        ProgressTextBox.SelectionStart = currentLength;
-                        ProgressTextBox.SelectionLength = 1;
-                        ProgressTextBox.SelectionTextBrush = Brushes.AliceBlue;
+                    // Окрашивание текущей буквы в черный цвет
+                    ProgressTextBox.SelectionStart = currentLength;
+                    ProgressTextBox.SelectionLength = 1;
+                    ProgressTextBox.SelectionTextBrush = Brushes.Black;
 
-                        currentLength++;
-                    }
+                    currentLength++;
 
-                    // Ожидание нажатия клавиши
-                    while (true)
-                    {
-                        await Task.Delay(50);
-                        if (Keyboard.IsKeyDown(e.Key))
-                        {
-                            key = EnglishToRussianLetters[e.Key];
-                            break;
-                        }
-                    }
+                    progressBar.Value = currentLength;
                 }
             }
         }
