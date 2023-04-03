@@ -27,8 +27,9 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         }
 
         private bool isStarted = false;
-        private int currentLength = 0;
-        private string letters = "ввово вовов овово вовоо оовов во ов вовво овово вово вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо аоаао оаоао вао ава вова авао оао лллааа ллала аллаа лалал аалал вал ла лалла алала вол лов алла вал ава вввллл ввлвл лввлл влвлв ллвлв вова лов влввл лвлвл алло олав вола лола лова вввааа аавав ваавв ава вава авава ввава вава алл ава в оао лала оооллл оолол лоолл олово лол ололо ллоло лава ово лово лол во овал аоавл воаал влвао лаоов лвлоа алвво вово лава овал алла олав олово вал алло";
+        private int currentLength = 45;
+        private int center = 45;
+        private string letters = "                                             ввово вовов овово вовоо оовов во ов вовво овово вово вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо аоаао оаоао вао ава вова авао оао лллааа ллала аллаа лалал аалал вал ла лалла алала вол лов алла вал ава вввллл ввлвл лввлл влвлв ллвлв вова лов влввл лвлвл алло олав вола лола лова вввааа аавав ваавв ава вава авава ввава вава алл ава в оао лала оооллл оолол лоолл олово лол ололо ллоло лава ово лово лол во овал аоавл воаал влвао лаоов лвлоа алвво вово лава овал алла олав олово вал алло";
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
@@ -73,23 +74,20 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                 if (key == " ")
                 {
                     ProgressTextBox.Foreground = Brushes.Gray;
-                    ProgressTextBox.Text = letters;
+                    ProgressTextBox.Text = letters.PadLeft(26);
                     ProgressTextBox.TextAlignment = TextAlignment.Center;
                     isStarted = true;
                 }
             }
             else
             {
-                if (key == ProgressTextBox.Text[currentLength].ToString())
+                if (key == ProgressTextBox.Text[center].ToString())
                 {
-                    // Окрашивание текущей буквы в черный цвет
-                    ProgressTextBox.SelectionStart = currentLength;
-                    ProgressTextBox.SelectionLength = 1;
-                    ProgressTextBox.SelectionTextBrush = Brushes.Black;
+                    string shiftedText = ProgressTextBox.Text.Substring(1) + ProgressTextBox.Text[0];
+                    ProgressTextBox.Text = shiftedText;
 
                     currentLength++;
-
-                    progressBar.Value = currentLength;
+                    progressBar.Value++;
                 }
             }
         }
