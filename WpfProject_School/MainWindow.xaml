@@ -11,11 +11,13 @@
         AllowsTransparency="True"
         Title="Проект" Height="600" Width="920" MouseDown="MovingWindow">
 
-    <Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    <Viewbox Stretch="Fill">
+        <Grid>
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
 
-         <Button Click="CloseClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource CloseButtonStyle}" Margin="876,9,10,560" />
-         <Button Click="MinimizeClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource MinimizeButtonStyle}" Margin="0,9,64,0"/>
-         <Button Click="MaximizeClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource MaximizeButtonStyle}" Margin="0,9,37,0" RenderTransformOrigin="0.603,0.639"/>
-      </Grid>
+            <Button Click="CloseClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource CloseButtonStyle}" Margin="876,9,10,560" />
+            <Button Click="MinimizeClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource MinimizeButtonStyle}" Margin="0,9,64,0"/>
+            <Button Click="MaximizeClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource MaximizeButtonStyle}" Margin="0,9,37,0" RenderTransformOrigin="0.603,0.639"/>
+        </Grid>
+    </Viewbox>
 </Window>

@@ -13,28 +13,28 @@
         <viewModel:MainViewModel/>
     </Page.DataContext>
 
-    <Border Background="#272537" CornerRadius="20">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="200"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Border Background="#272537" CornerRadius="20">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="70"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <TextBlock Text="TypeBoost" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="22">
-                <TextBlock.Effect>
-                    <DropShadowEffect/>
-                </TextBlock.Effect>
-            </TextBlock>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <TextBlock Text="TypeBoost" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="22">
+                    <TextBlock.Effect>
+                        <DropShadowEffect/>
+                    </TextBlock.Effect>
+                </TextBlock>
 
-            <StackPanel Grid.Row="1">
-                <RadioButton Content="Главная" Height="50" FontSize="15" Foreground="White" IsChecked="True" Command="{Binding GeneralViewCommand}" Style="{StaticResource MenuButtonStyle}"/>
-                <RadioButton Content="Настройки" Height="50" FontSize="15" Foreground="White" Command="{Binding SettingsViewCommand}" Style="{StaticResource MenuButtonStyle}"/>
-            </StackPanel>
-            <ContentControl Grid.Row="1" Grid.Column="1" Margin="10" Content="{Binding CurrentView}"/>  
-        </Grid>
-    </Border>
+                <StackPanel Grid.Row="1">
+                    <RadioButton Content="Главная" Height="50" FontSize="15" Foreground="White" IsChecked="True" Command="{Binding GeneralViewCommand}" Style="{StaticResource MenuButtonStyle}"/>
+                    <RadioButton Content="Настройки" Height="50" FontSize="15" Foreground="White" Command="{Binding SettingsViewCommand}" Style="{StaticResource MenuButtonStyle}"/>
+                </StackPanel>
+                <ContentControl Grid.Row="1" Grid.Column="1" Margin="10" Content="{Binding CurrentView}"/>
+            </Grid>
+        </Border>
 </Page>

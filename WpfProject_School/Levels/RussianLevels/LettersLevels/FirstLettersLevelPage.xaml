@@ -25,11 +25,11 @@
                 </TextBlock.Effect>
             </TextBlock>
 
-            <StackPanel Grid.Row="1"/>
+
             <StackPanel Grid.Column="1" Margin="0,0,0,40">
                 <ProgressBar x:Name="progressBar" Height="10" Width="300" Grid.Column="1" Minimum="0" Maximum="494" Value="0" HorizontalAlignment="Left" Margin="10,10,410,50" />
             </StackPanel>
-
+            <Border x:Name="InvisibleBorder" Visibility="Hidden" Panel.ZIndex="1" Background="Gray" Grid.Column="1" Margin="10,34,360,-34"/>
             <TextBox x:Name="ProgressTextBox" TextWrapping="NoWrap" Padding="15,0,15,0" Text="Пробел - старт, ESC - Стоп/Выход" PreviewKeyDown="ProgressTextBox_PreviewKeyDown" PreviewMouseDown="ProgressTextBox_PreviewMouseDown" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Background="White" IsReadOnly="True" IsReadOnlyCaretVisible="False" Margin="10,35,10,-34" Style="{StaticResource MaterialDesignTextBox}"/>
         </Grid>
     </Border>
