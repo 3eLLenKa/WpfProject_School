@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,9 +28,21 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         }
 
         private bool isStarted = false;
-        private int currentLength = 45;
-        private int center = 45;
-        private string letters = "                                             ввово вовов овово вовоо оовов во ов вовво овово вово вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо аоаао оаоао вао ава вова авао оао лллааа ллала аллаа лалал аалал вал ла лалла алала вол лов алла вал ава вввллл ввлвл лввлл влвлв ллвлв вова лов влввл лвлвл алло олав вола лола лова вввааа аавав ваавв ава вава авава ввава вава алл ава в оао лала оооллл оолол лоолл олово лол ололо ллоло лава ово лово лол во овал аоавл воаал влвао лаоов лвлоа алвво вово лава овал алла олав олово вал алло";
+
+        private bool isPaused = false;
+
+        private int currentIndex = 0;
+        private int currentLevel = 0;
+
+        private string[] letters = { "ввово вовов овово вовоо оовов во ов вовво овово вово",
+                                 "вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо",
+                                 "аоаао оаоао вао ава вова авао оао лллааа ллала аллаа",
+                                 "лалал аалал вал ла лалла алала вол лов алла вал аваа",
+                                 "вввллл ввлвл лввлл влвлв ллвлв вова лов влввл лвлвлл",
+                                 "алло олав вола лола лова вввааа аавав ваавв ава вава",
+                                 "авава ввава вава алл ава в оао лала оооллл оолол лол",
+                                 "олово лол ололо ллоло лава ово лово лол во овал аоав",
+                                 "воаал влвао лаоов лвлоа алвво вово лава овал алла ол"};
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
@@ -59,7 +72,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         { Key.X, "ч" },
         { Key.Y, "н" },
         { Key.Z, "я" },
-        {Key.Space, " " }
+        {Key.Space, " " },
+        {Key.Escape, "esc" },
         };
 
         private void ProgressTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
@@ -67,27 +81,87 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             e.Handled = true;
 
             string key = EnglishToRussianLetters[e.Key];
-            int progressLength = ProgressTextBox.Text.Length;
+
+            if (!isStarted && progressBar.Value == progressBar.Maximum)
+            {
+                e.Handled = true;
+
+                if (key == " ") isStarted = false;
+                if (key == "esc") NavigationService.GoBack();
+            }
 
             if (!isStarted)
             {
                 if (key == " ")
                 {
-                    ProgressTextBox.Foreground = Brushes.Gray;
-                    ProgressTextBox.Text = letters.PadLeft(26);
-                    ProgressTextBox.TextAlignment = TextAlignment.Center;
                     isStarted = true;
+
+                    ProgressTextBox.Foreground = Brushes.Gray;
+                    ProgressTextBox.Text = letters[0];
+                    ProgressTextBox.TextAlignment = TextAlignment.Center;
+
+                    progressBar.Value = 0;
+                }
+
+                else if (key == "esc")
+                {
+                    MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите вернуться?", "Подтверждение", MessageBoxButton.YesNo);
+                    switch (result)
+                    {
+                        case MessageBoxResult.Yes:
+                            NavigationService.GoBack();
+                            break;
+                        case MessageBoxResult.No:
+                            break;
+                    }
+
                 }
             }
             else
             {
-                if (key == ProgressTextBox.Text[center].ToString())
+                if (key == ProgressTextBox.Text[currentIndex].ToString())
                 {
-                    string shiftedText = ProgressTextBox.Text.Substring(1) + ProgressTextBox.Text[0];
-                    ProgressTextBox.Text = shiftedText;
+                    if (currentIndex == letters[currentLevel].Length-1)
+                    {
+                        currentIndex = 0;
+                        currentLevel++;
+                        ProgressTextBox.Text = letters[currentLevel];
+                    }
 
-                    currentLength++;
-                    progressBar.Value++;
+                    if (currentLevel == letters.Length-1)
+                    {
+                        currentLevel = 0;
+                        ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
+                        progressBar.Value = progressBar.Maximum;
+                        MessageBox.Show("Кол - во ошибок: \nЗатраченное время:", "Результаты тренировки");
+
+                        isStarted = false;
+                    }
+
+                    else
+                    {
+
+                        ProgressTextBox.SelectionStart = currentIndex;
+                        ProgressTextBox.SelectionLength = 1;
+                        ProgressTextBox.SelectionBrush = Brushes.Black;
+
+                        currentIndex++;
+                        progressBar.Value++;
+                    }
+                }
+
+                else if (key == "esc")
+                {
+                    MessageBoxResult result = MessageBox.Show("Продолжить?", "Пауза", MessageBoxButton.YesNo);
+
+                    switch (result)
+                    {
+                        case MessageBoxResult.Yes:
+                            break;
+                        case MessageBoxResult.No:
+                            NavigationService.GoBack();
+                            break;
+                    }
                 }
             }
         }
