@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 {
@@ -27,12 +28,17 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             ProgressTextBox.Focus();
         }
 
+        private DispatcherTimer timer;
+
         private bool isStarted = false;
 
         private bool isPaused = false;
 
         private int currentIndex = 0;
         private int currentLevel = 0;
+
+        private int secondsElapsed;
+        private int minutesElapsed;
 
         private string[] letters = { "ввово вовов овово вовоо оовов во ов вовво овово вово",
                                  "вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо",
@@ -86,7 +92,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             {
                 e.Handled = true;
 
-                if (key == " ") isStarted = false;
+                if (key == " ") { secondsElapsed = 0; minutesElapsed = 0; }
                 if (key == "esc") NavigationService.GoBack();
             }
 
@@ -95,6 +101,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                 if (key == " ")
                 {
                     isStarted = true;
+
+                    StartTimer();
 
                     ProgressTextBox.Foreground = Brushes.Gray;
                     ProgressTextBox.Text = letters[0];
@@ -106,6 +114,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                 else if (key == "esc")
                 {
                     MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите вернуться?", "Подтверждение", MessageBoxButton.YesNo);
+
                     switch (result)
                     {
                         case MessageBoxResult.Yes:
@@ -130,10 +139,12 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     if (currentLevel == letters.Length-1)
                     {
+                        timer.Stop();
+
                         currentLevel = 0;
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
-                        MessageBox.Show("Кол - во ошибок: \nЗатраченное время:", "Результаты тренировки");
+                        MessageBox.Show($"Кол - во ошибок: \nЗатраченное время: {timeBlock.Text.Substring(7, 5)}", "Результаты тренировки");
 
                         isStarted = false;
                     }
@@ -164,6 +175,27 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                     }
                 }
             }
+        }
+
+        private void StartTimer()
+        {
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            secondsElapsed++;
+
+            if (secondsElapsed == 60)
+            {
+                secondsElapsed = 0;
+                minutesElapsed++;
+            }
+
+            timeBlock.Text = string.Format("Время: {1:00}:{0:00}", secondsElapsed, minutesElapsed);
         }
         private void ProgressTextBox_PreviewMouseDown(object sender, MouseEventArgs e)
         {

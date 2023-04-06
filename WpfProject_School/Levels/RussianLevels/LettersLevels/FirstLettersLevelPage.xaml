@@ -28,6 +28,7 @@
             
             <ProgressBar x:Name="progressBar" Height="10" Width="300" Minimum="0" Maximum="409" Value="0" Margin="195,82,425,-22" />
             <TextBlock Text="Ваш прогресс:" FontSize="20" Foreground="White" Height="30" Margin="50,69,730,-29"/>
+            <TextBlock x:Name="timeBlock" FontSize="20" Text="Время: 00:00" Foreground="White" Margin="746,70,49,-31"/>
             <TextBox x:Name="ProgressTextBox" TextWrapping="NoWrap" Padding="15,0,15,0" Text="Пробел - старт, ESC - Стоп/Выход" PreviewKeyDown="ProgressTextBox_PreviewKeyDown" PreviewMouseDown="ProgressTextBox_PreviewMouseDown" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Background="White" IsReadOnly="True" IsReadOnlyCaretVisible="False" Margin="49,109,49,-108" Style="{StaticResource MaterialDesignTextBox}"/>
             <StackPanel Margin="0,202,0,-520">
                 <StackPanel.Resources>
