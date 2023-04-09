@@ -22,6 +22,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
     /// </summary>
     public partial class FirstLettersLevelPage : Page
     {
+        MainWindow window = new MainWindow();
         public FirstLettersLevelPage()
         {
             InitializeComponent();
@@ -32,10 +33,9 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
         private bool isStarted = false;
 
-        private bool isPaused = false;
-
         private int currentIndex = 0;
         private int currentLevel = 0;
+        private int errosCount = 0;
 
         private int secondsElapsed;
         private int minutesElapsed;
@@ -86,7 +86,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         {
             e.Handled = true;
 
-            string key = EnglishToRussianLetters[e.Key];
+            string key = EnglishToRussianLetters.ContainsKey(e.Key) ? EnglishToRussianLetters[e.Key] : null;
 
             if (!isStarted && progressBar.Value == progressBar.Maximum)
             {
@@ -100,10 +100,12 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             {
                 if (key == " ")
                 {
+                    
                     isStarted = true;
 
                     StartTimer();
 
+                    errosCount= 0;
                     ProgressTextBox.Foreground = Brushes.Gray;
                     ProgressTextBox.Text = letters[0];
                     ProgressTextBox.TextAlignment = TextAlignment.Center;
@@ -144,14 +146,14 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                         currentLevel = 0;
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
-                        MessageBox.Show($"Кол - во ошибок: \nЗатраченное время: {timeBlock.Text.Substring(7, 5)}", "Результаты тренировки");
+
+                        MessageBox.Show($"Кол - во ошибок: {errosCount} \nЗатраченное время: {timeBlock.Text.Substring(7, 5)}", "Результаты тренировки");
 
                         isStarted = false;
                     }
 
                     else
                     {
-
                         ProgressTextBox.SelectionStart = currentIndex;
                         ProgressTextBox.SelectionLength = 1;
                         ProgressTextBox.SelectionBrush = Brushes.Black;
@@ -173,6 +175,11 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                             NavigationService.GoBack();
                             break;
                     }
+                }
+
+                else
+                {
+                    errosCount++;
                 }
             }
         }
@@ -197,6 +204,15 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
             timeBlock.Text = string.Format("Время: {1:00}:{0:00}", secondsElapsed, minutesElapsed);
         }
+
+        private void Grid_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (!(e.OriginalSource is TextBox))
+            {
+                ProgressTextBox.Focus();
+            }
+        }
+
         private void ProgressTextBox_PreviewMouseDown(object sender, MouseEventArgs e)
         {
             e.Handled = true;

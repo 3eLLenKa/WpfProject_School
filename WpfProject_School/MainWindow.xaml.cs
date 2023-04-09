@@ -17,6 +17,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfProject_School;
+using WpfProject_School.MVVM.View;
+using WpfProject_School.Levels.RussianLevels.LettersLevels;
 
 namespace WpfProject_School
 {
@@ -26,6 +28,8 @@ namespace WpfProject_School
     public partial class MainWindow : Window
     {
         public static MainWindow window;
+
+        private static FirstLettersLevelPage lettersPage = new FirstLettersLevelPage();
 
         public MainWindow()
         {
@@ -69,7 +73,7 @@ namespace WpfProject_School
 
         private void CloseClient(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Current.Shutdown();
         }
 
         private void MaximizeClient(object sender, EventArgs e)
@@ -80,7 +84,6 @@ namespace WpfProject_School
             }
             else WindowState = WindowState.Maximized;
         }
-
         private void MinimizeClient(object sender, EventArgs e)
         {
             Application.Current.MainWindow.WindowState = WindowState.Minimized;

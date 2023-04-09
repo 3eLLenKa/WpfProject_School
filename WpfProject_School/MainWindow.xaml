@@ -15,9 +15,9 @@
         <Grid>
             <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
 
-            <Button Click="CloseClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource CloseButtonStyle}" Margin="876,9,10,560" />
-            <Button Click="MinimizeClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource MinimizeButtonStyle}" Margin="0,9,64,0"/>
-            <Button Click="MaximizeClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource MaximizeButtonStyle}" Margin="0,9,37,0" RenderTransformOrigin="0.603,0.639"/>
+            <Button x:Name="CloseButton" Click="CloseClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource CloseButtonStyle}" Margin="876,9,10,560" />
+            <Button x:Name="MinimizeButton" Click="MinimizeClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource MinimizeButtonStyle}" Margin="0,9,64,0"/>
+            <Button x:Name="MaximizeButton" Click="MaximizeClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource MaximizeButtonStyle}" Margin="0,9,37,0" RenderTransformOrigin="0.603,0.639"/>
         </Grid>
     </Viewbox>
 
