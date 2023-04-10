@@ -22,7 +22,6 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
     /// </summary>
     public partial class FirstLettersLevelPage : Page
     {
-        MainWindow window = new MainWindow();
         public FirstLettersLevelPage()
         {
             InitializeComponent();
@@ -88,20 +87,14 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
             string key = EnglishToRussianLetters.ContainsKey(e.Key) ? EnglishToRussianLetters[e.Key] : null;
 
-            if (!isStarted && progressBar.Value == progressBar.Maximum)
-            {
-                e.Handled = true;
-
-                if (key == " ") { secondsElapsed = 0; minutesElapsed = 0; }
-                if (key == "esc") NavigationService.GoBack();
-            }
-
             if (!isStarted)
             {
                 if (key == " ")
                 {
-                    
                     isStarted = true;
+
+                    secondsElapsed = 0;
+                    minutesElapsed = 0;
 
                     StartTimer();
 
@@ -113,13 +106,14 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                     progressBar.Value = 0;
                 }
 
-                else if (key == "esc")
+                else if ( key == "esc")
                 {
                     MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите вернуться?", "Подтверждение", MessageBoxButton.YesNo);
 
                     switch (result)
                     {
                         case MessageBoxResult.Yes:
+                            WindowSettings();
                             NavigationService.GoBack();
                             break;
                         case MessageBoxResult.No:
@@ -130,7 +124,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             }
             else
             {
-                if (key == ProgressTextBox.Text[currentIndex].ToString())
+                if (key == " ")
                 {
                     if (currentIndex == letters[currentLevel].Length-1)
                     {
@@ -141,6 +135,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     if (currentLevel == letters.Length-1)
                     {
+                        isStarted = false;
+
                         timer.Stop();
 
                         currentLevel = 0;
@@ -148,8 +144,6 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                         progressBar.Value = progressBar.Maximum;
 
                         MessageBox.Show($"Кол - во ошибок: {errosCount} \nЗатраченное время: {timeBlock.Text.Substring(7, 5)}", "Результаты тренировки");
-
-                        isStarted = false;
                     }
 
                     else
@@ -163,15 +157,19 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                     }
                 }
 
-                else if (key == "esc")
+                else if (isStarted && key == "esc")
                 {
+                    timer.Stop();
+
                     MessageBoxResult result = MessageBox.Show("Продолжить?", "Пауза", MessageBoxButton.YesNo);
 
                     switch (result)
                     {
                         case MessageBoxResult.Yes:
+                            timer.Start();
                             break;
                         case MessageBoxResult.No:
+                            WindowSettings();
                             NavigationService.GoBack();
                             break;
                     }
@@ -190,6 +188,15 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             timer.Interval = TimeSpan.FromSeconds(1);
             timer.Tick += Timer_Tick;
             timer.Start();
+        }
+
+        private void WindowSettings()
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+
+            mainWindow.WindowState = WindowState.Normal;
+            mainWindow.MinimizeButton.Visibility = Visibility.Visible;
+            mainWindow.MaximizeButton.Visibility = Visibility.Visible;
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -212,7 +219,6 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                 ProgressTextBox.Focus();
             }
         }
-
         private void ProgressTextBox_PreviewMouseDown(object sender, MouseEventArgs e)
         {
             e.Handled = true;

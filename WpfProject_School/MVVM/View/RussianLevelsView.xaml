@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:WpfProject_School.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="920">
-    
+
     <UserControl.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Margin" Value="10"/>
@@ -18,131 +18,144 @@
             <TextBlock Text="Уровни" HorizontalAlignment="Center" Foreground="White" FontSize="28" Width="100" Height="42"/>
         </StackPanel>
         <StackPanel>
-            
-            <ScrollViewer Height="425" VerticalScrollBarVisibility="Auto">
+
+            <ScrollViewer Height="425" Margin="0,15,0,0" VerticalScrollBarVisibility="Auto">
                 <WrapPanel HorizontalAlignment="Left">
-                    <UniformGrid Rows="6" Columns="4">
-                        <Button Click="FirstLettersPageNavigation" Content="ва ол" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#844eff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip> 
-                        </Button>
-                        <Button Width="150" Height="150" Background="#4e99ff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="153" Background="#4eff91">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#ecff4e">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#844eff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#4e99ff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="153" Background="#4eff91">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#ecff4e">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#844eff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#4e99ff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="153" Background="#4eff91">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#ecff4e">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#844eff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#4e99ff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="153" Background="#4eff91">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#ecff4e">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#844eff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#4e99ff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="153" Background="#4eff91">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#ecff4e">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#844eff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#4e99ff">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="153" Background="#4eff91">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
-                            </Button.Clip>
-                        </Button>
-                        <Button Width="150" Height="150" Background="#ecff4e">
-                            <Button.Clip>
-                                <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
-                            </Button.Clip>
-                        </Button>
-                    </UniformGrid>
+                    <StackPanel>
+                        <TextBlock Foreground="White" FontSize="20" HorizontalAlignment="Left" Text="Базовые уроки" Margin="15" Height="29" Width="146"/>
+                        <UniformGrid Rows="2" Columns="4">
+                            <Button Click="FirstLettersPageNavigation" Content="ва ол" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#844eff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="SecondLettersPageNavigation" Content="фы дж" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#4e99ff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="ThirdLettersPageNavigation" Content="ми ть" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="153" Background="#4eff91">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="FourthLettersPageNavigation" Content="еп нр" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="FifthLettersPageNavigation" Content="ук гш" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#844eff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="SixthLettersPageNavigation" Content="чс бю" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#4e99ff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="SeventhLettersPageNavigation" Content="йц щз" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#4eff91">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="EighthLettersPageNavigation" Content="я эхъ" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                        </UniformGrid>
+                        <TextBlock Foreground="White" FontSize="20" HorizontalAlignment="Left" Text="Набираем слова" Margin="15" Height="29" Width="155"/>
+                        <UniformGrid Rows="1" Columns="4">
+                            <Button Click="FirstWordsPageNavigation" Content="Слова А-Я" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#844eff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="SecondWordsPageNavigation" Content="Короткие&#10;слова" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#4e99ff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="ThirdWordsPageNavigation" Content="Длинные&#10;слова" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="153" Background="#4eff91">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="FourthWordsPageNavigation" Content="Прописные&#10;буквы" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                        </UniformGrid>
+                        <TextBlock Foreground="White" FontSize="20" HorizontalAlignment="Left" Text="Знаки препинания" Margin="15" Height="29" Width="258"/>
+                        <UniformGrid Rows="1" Columns="4">
+                            <Button Click="FirstPunctuationPageNavigation" Content=".,;:" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#844eff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="SecondPunctuationPageNavigation" Content="!?&quot;-" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#4e99ff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="ThirdPunctuationPageNavigation" Content="()\/" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="153" Background="#4eff91">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="FourthPunctuationPageNavigation" Content="Всё вместе" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                        </UniformGrid>
+                        <TextBlock Foreground="White" FontSize="20" HorizontalAlignment="Left" Text="Цифры и символы" Margin="15" Height="29" Width="258"/>
+                        <UniformGrid Rows="2" Columns="4">
+                            <Button Click="FirstNumbersPageNavigation" Content="56 78" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#844eff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="SecondNumbersPageNavigation" Content="30 90" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#4e99ff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="ThirdNumbersPageNavigation" Content="12 -=" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="153" Background="#4eff91">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="FourthNumbersPageNavigation" Content="Числа 1-99" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="FifthNumbersPageNavigation" Content="% : ? *" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#844eff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="SixthNumbersPageNavigation" Content="№ ; ()" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#4e99ff">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="SeventhNumbersPageNavigation" Content="!&quot;_+" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="153" Background="#4eff91">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
+                                </Button.Clip>
+                            </Button>
+                            <Button Click="EighthNumbersPageNavigation" Content="Всё вместе" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                                <Button.Clip>
+                                    <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
+                                </Button.Clip>
+                            </Button>
+                        </UniformGrid>
+                        
+                    </StackPanel>
                 </WrapPanel>
             </ScrollViewer>
         </StackPanel>

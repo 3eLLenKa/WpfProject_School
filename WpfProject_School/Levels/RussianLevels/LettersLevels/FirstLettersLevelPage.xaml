@@ -9,10 +9,8 @@
       d:DesignHeight="600" d:DesignWidth="920"
       Title="FirstLettersLevelPage">
 
-
-
     <Border Background="#272537" CornerRadius="20">
-        <Grid>
+        <Grid PreviewKeyDown="Grid_PreviewKeyDown">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="920"/>
             </Grid.ColumnDefinitions>

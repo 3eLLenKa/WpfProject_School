@@ -21,43 +21,60 @@ namespace WpfProject_School.MVVM.View
 
         //EventArgs letters levels buttons
 
+        private void WindowSettings()
+        {
+            var mainWindow = Application.Current.MainWindow as MainWindow;
+
+            mainWindow.WindowState = WindowState.Maximized;
+            mainWindow.MinimizeButton.Visibility = Visibility.Hidden;
+            mainWindow.MaximizeButton.Visibility = Visibility.Hidden;
+        }
+
         private void FirstLettersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FirstLettersLevelPage());
         }
 
         private void SecondLettersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new SecondLettersLevelPage());
         }
 
         private void ThirdLettersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new ThirdLettersLevelPage());
         }
 
         private void FourthLettersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FourthLettersLevelPage());
         }
 
         private void FifthLettersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FifthLettersLevelPage());
         }
 
         private void SixthLettersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new SixthLettersLevelPage());
         }
 
         private void SeventhLettersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new SeventhLettersLevelPage());
         }
 
         private void EighthLettersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new EighthLettersLevelPage());
         }
 
@@ -67,21 +84,25 @@ namespace WpfProject_School.MVVM.View
 
         private void FirstWordsPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FirstWordsLevelPage());
         }
 
         private void SecondWordsPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new SecondWordsLevelPage());
         }
 
         private void ThirdWordsPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new ThirdWordsLevelPage());
         }
 
         private void FourthWordsPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FourthWordsLevelPage());
         }
 
@@ -91,41 +112,49 @@ namespace WpfProject_School.MVVM.View
 
         private void FirstNumbersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FirstNumbersLevelPage());
         }
 
         private void SecondNumbersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new SecondNumbersLevelPage());
         }
 
         private void ThirdNumbersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new ThirdNumbersLevelPage());
         }
 
         private void FourthNumbersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FourthNumbersLevelPage());
         }
 
         private void FifthNumbersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FifthNumbersLevelPage());
         }
 
         private void SixthNumbersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new SixthNumbersLevelPage());
         }
 
         private void SeventhNumbersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new SeventhNumbersLevelPage());
         }
 
         private void EighthNumbersPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new EighthNumbersLevelPage());
         }
 
@@ -135,21 +164,25 @@ namespace WpfProject_School.MVVM.View
 
         private void FirstPunctuationPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FirstPunctuationLevelPage());
         }
 
         private void SecondPunctuationPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new SecondPunctuationLevelPage());
         }
 
         private void ThirdPunctuationPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new ThirdPunctuationLevelPage());
         }
 
         private void FourthPunctuationPageNavigation(object sender, RoutedEventArgs e)
         {
+            WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FourthPunctuationLevelPage());
         }
     }

@@ -5,10 +5,109 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfProject_School.Levels.RussianLevels.LettersLevels"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="920"
       Title="ThirdLettersLevelPage">
 
-    <Grid>
-        
-    </Grid>
+    <Border Background="#272537" CornerRadius="20">
+        <Grid PreviewKeyDown="Grid_PreviewKeyDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="920"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="TypeBoost" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="22" Margin="50,0,0,0">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <ProgressBar x:Name="progressBar" Height="10" Width="300" Minimum="0" Maximum="409" Value="0" Margin="195,82,425,-22" />
+            <TextBlock Text="Ваш прогресс:" FontSize="20" Foreground="White" Height="30" Margin="50,69,730,-29"/>
+            <TextBlock x:Name="timeBlock" FontSize="20" Text="Время: 00:00" Foreground="White" Margin="746,70,49,-31"/>
+            <TextBox x:Name="ProgressTextBox" TextWrapping="NoWrap" Padding="15,0,15,0" Text="Пробел - старт, ESC - Стоп/Выход" PreviewKeyDown="ProgressTextBox_PreviewKeyDown" PreviewMouseDown="ProgressTextBox_PreviewMouseDown" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Background="White" IsReadOnly="True" IsReadOnlyCaretVisible="False" Margin="49,109,49,-108" Style="{StaticResource MaterialDesignTextBox}"/>
+            <StackPanel Margin="0,202,0,-520">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="8,0,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Border Height="377" Background="Gray" CornerRadius="10" Width="882">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,304">
+                            <Button Content="ё" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="1" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="2" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="3" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="4" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="5" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="6" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="7" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="8" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="9" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="0" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="-" FontSize="30" Width="50" Height="50"/>
+                            <Button Content="=" FontSize="30" Width="50" Height="50"/>
+                            <Button Content="Backspace" FontSize="22" Width="111" Height="50"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,180" >
+                            <Button Content="Tab" FontSize="25" Width="78" Height="50" />
+                            <Button Content="й" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="ц" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="у" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="к" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="е" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="н" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="г" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="ш" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="щ" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="з" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="х" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="ъ" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="\" FontSize="25" Width="83" Height="50"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,56" >
+                            <Button Content="Caps Lock" FontSize="19" Width="93" Height="50" />
+                            <Button Content="ф" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="ы" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="в" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="а" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="п" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="р" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="о" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="л" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="д" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="ж" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="э" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="Enter" FontSize="25" Width="126" Height="50"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,-68" >
+                            <Button Content="Shift" FontSize="25" Width="138" Height="50" />
+                            <Button Content="я" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="ч" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="с" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="м" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="и" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="т" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="ь" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="б" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="ю" FontSize="25" Width="50" Height="50"/>
+                            <Button Content="." FontSize="25" Width="50" Height="50"/>
+                            <Button Content="Shift" FontSize="25" Width="139" Height="50" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,-192" >
+                            <Button Content="Ctrl" FontSize="25" Width="71" Height="50" />
+                            <Button Content="Win" FontSize="25" Width="71" Height="50"/>
+                            <Button Content="Alt" FontSize="25" Width="71" Height="50"/>
+                            <Button Content="Space" FontSize="25" Width="365" Height="50"/>
+                            <Button Content="Alt" FontSize="25" Width="71" Height="50"/>
+                            <Button Content="Win" FontSize="25" Width="71" Height="50"/>
+                            <Button Content="Ctrl" FontSize="25" Width="97" Height="50"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Page>

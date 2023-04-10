@@ -20,5 +20,4 @@
             <Button x:Name="MaximizeButton" Click="MaximizeClient" VerticalAlignment="Top" HorizontalAlignment="Right" Style="{StaticResource MaximizeButtonStyle}" Margin="0,9,37,0" RenderTransformOrigin="0.603,0.639"/>
         </Grid>
     </Viewbox>
-
 </Window>
