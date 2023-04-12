@@ -41,23 +41,24 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
-        private string[] letters = { "яяяххх яяхях хяяхх яхяхя ххяхя святой брюхо яхяях",
-                                     "хяхях нельзя учиться захватить смеяться сходить",
-                                     "эээххх ээхэх хээхх эхэхэ ххэхэ хоббит поэзия эхээх",
-                                     "хэхэх эстония хирург экран колхоз восхищение ъъъэээ",
-                                     "ъъэъэ эъъээ ъэъэъ ээъэъ эхо подъезд ъэъъэ эъэъэ",
-                                     "объект объединить мэр электрический экипаж яяяъъъ",
-                                     "яяъяъ ъяяъъ яъяъя ъъяъя подъем артиллерия яъяяъ",
-                                     "ъяъяъ теория башня воля съесть объявление яяяэээ",
-                                     "ээяэя яээяя экипаж объятие эяэяэ яяэяэ уверять",
-                                     "обезьяна премия этот эксперимент хххъъъ ххъхъ ъххъъ",
-                                     "съезд хозяйка хъхъх ъъхъх вздох подъехать хорошо",
-                                     "бъем охватить эхэяъ хяъъэ хэхъя яхээъ яъяэх ъэххя",
-                                     "ъяъхэ эъяях тихо принять яблоко заставлять выходной",
-                                     "тихонько объяснить поэтому сидя шестьдесят" };
+        private string[] letters = { " яяяххх яяхях хяяхх яхяхя ххяхя святой брюхо яхяях",
+                                     " хяхях нельзя учиться захватить смеяться сходить",
+                                     " эээххх ээхэх хээхх эхэхэ ххэхэ хоббит поэзия эхээх",
+                                     " хэхэх эстония хирург экран колхоз восхищение ъъъэээ",
+                                     " ъъэъэ эъъээ ъэъэъ ээъэъ эхо подъезд ъэъъэ эъэъэ",
+                                     " объект объединить мэр электрический экипаж яяяъъъ",
+                                     " яяъяъ ъяяъъ яъяъя ъъяъя подъем артиллерия яъяяъ",
+                                     " ъяъяъ теория башня воля съесть объявление яяяэээ",
+                                     " ээяэя яээяя экипаж объятие эяэяэ яяэяэ уверять",
+                                     " обезьяна премия этот эксперимент хххъъъ ххъхъ ъххъъ",
+                                     " съезд хозяйка хъхъх ъъхъх вздох подъехать хорошо",
+                                     " бъем охватить эхэяъ хяъъэ хэхъя яхээъ яъяэх ъэххя",
+                                     " ъяъхэ эъяях тихо принять яблоко заставлять выходной",
+                                     " тихонько объяснить поэтому сидя шестьдесят" };
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
+        {Key.OemTilde, "ё" },
         {Key.OemOpenBrackets, "х" },
         {Key.OemCloseBrackets, "ъ" },
         {Key.OemQuotes, "э" },
@@ -214,11 +215,15 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     if (currentLevel == letters.Length - 1)
                     {
+                        var brush = new SolidColorBrush(Color.FromRgb(0xDD, 0xDD, 0xDD));
+
                         isStarted = false;
 
                         timer.Stop();
 
                         currentLevel = 0;
+                        N.Background = brush;
+
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
 
@@ -227,8 +232,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     else
                     {
-                        ProgressTextBox.SelectionStart = currentIndex;
-                        ProgressTextBox.SelectionLength = 1;
+                        ProgressTextBox.SelectionStart = 1;
+                        ProgressTextBox.SelectionLength = currentIndex;
                         ProgressTextBox.SelectionBrush = Brushes.Black;
 
                         currentIndex++;

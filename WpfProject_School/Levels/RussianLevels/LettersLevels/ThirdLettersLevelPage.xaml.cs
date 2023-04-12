@@ -42,20 +42,21 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
-        private string[] letters = { "мммттт ммтмт тммтт мтмтм ттмтм мама тот мтммт тмтмт",
-                                     "мадам дым тыл там том иииттт иитит тиитт итити ттити",
-                                     "молитва идти итиит титит живот вот или вид вдали ьььиии",
-                                     "ььиьи иььии ьиьиь ииьиь жалить водить ьиььи иьиьи мать",
-                                     "мыть видимо вождь вдоль мммььь ммьмь ьммьь мьмьм ььмьм",
-                                     "мол даль мьммь ьмьмь отдать отдавать выдать видать мимо",
-                                     "мммиии иимим миимм давить мыло имими ммими доложить мода",
-                                     "фильм лифт отложить тттььь ттьть ьттьь толь ловить тьтьт",
-                                     "ььтьт вождь ждать давать ломать лифт видать идиот итимь",
-                                     "тмььи титьм мтииь мьмит ьиттм ьмьти иьммт дождь флот жить",
-                                     "вложить живо дать дама выдавать дата" };
+        private string[] letters = { " мммттт ммтмт тммтт мтмтм ттмтм мама тот мтммт тмтмт",
+                                     " мадам дым тыл там том иииттт иитит тиитт итити ттити",
+                                     " молитва идти итиит титит живот вот или вид вдали ьььиии",
+                                     " ььиьи иььии ьиьиь ииьиь жалить водить ьиььи иьиьи мать",
+                                     " мыть видимо вождь вдоль мммььь ммьмь ьммьь мьмьм ььмьм",
+                                     " мол даль мьммь ьмьмь отдать отдавать выдать видать мимо",
+                                     " мммиии иимим миимм давить мыло имими ммими доложить мода",
+                                     " фильм лифт отложить тттььь ттьть ьттьь толь ловить тьтьт",
+                                     " ььтьт вождь ждать давать ломать лифт видать идиот итимь",
+                                     " тмььи титьм мтииь мьмит ьиттм ьмьти иьммт дождь флот жить",
+                                     " вложить живо дать дама выдавать дата" };
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
+        {Key.OemTilde, "ё" },
         {Key.OemOpenBrackets, "х" },
         {Key.OemCloseBrackets, "ъ" },
         {Key.OemQuotes, "э" },
@@ -164,7 +165,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
             if (!isStarted)
             {
-                if (key == ProgressTextBox.Text[currentIndex].ToString())
+                if (key == " ")
                 {
                     isStarted = true;
 
@@ -199,7 +200,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             }
             else
             {
-                if (key == " ")
+                if (key == ProgressTextBox.Text[currentIndex].ToString())
                 {
                     correctCount++;
 
@@ -212,11 +213,15 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     if (currentLevel == letters.Length - 1)
                     {
+                        var brush = new SolidColorBrush(Color.FromRgb(0xDD, 0xDD, 0xDD));
+
                         isStarted = false;
 
                         timer.Stop();
 
                         currentLevel = 0;
+                        F.Background = brush;
+
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
 
@@ -225,8 +230,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     else
                     {
-                        ProgressTextBox.SelectionStart = currentIndex;
-                        ProgressTextBox.SelectionLength = 1;
+                        ProgressTextBox.SelectionStart = 1;
+                        ProgressTextBox.SelectionLength = currentIndex;
                         ProgressTextBox.SelectionBrush = Brushes.Black;
 
                         currentIndex++;

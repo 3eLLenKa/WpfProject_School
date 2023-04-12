@@ -42,18 +42,19 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
-        private string[] letters = { "ввово вовов овово вовоо оовов во ов вовво овово вово",
-                                 "вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо",
-                                 "аоаао оаоао вао ава вова авао оао лллааа ллала аллаа",
-                                 "лалал аалал вал ла лалла алала вол лов алла вал аваа",
-                                 "вввллл ввлвл лввлл влвлв ллвлв вова лов влввл лвлвлл",
-                                 "алло олав вола лола лова вввааа аавав ваавв ава вава",
-                                 "авава ввава вава алл ава в оао лала оооллл оолол лол",
-                                 "олово лол ололо ллоло лава ово лово лол во овал аоав",
-                                 "воаал влвао лаоов лвлоа алвво вово лава овал алла ол"};
+        private string[] letters = { " ввово вовов овово вовоо оовов во ов вовво овово вово",
+                                 " вов ово во овов аааооо ааоао оааоо аоаоа ооаоа ва оо",
+                                 " аоаао оаоао вао ава вова авао оао лллааа ллала аллаа",
+                                 " лалал аалал вал ла лалла алала вол лов алла вал аваа",
+                                 " вввллл ввлвл лввлл влвлв ллвлв вова лов влввл лвлвлл",
+                                 " алло олав вола лола лова вввааа аавав ваавв ава вава",
+                                 " авава ввава вава алл ава в оао лала оооллл оолол лол",
+                                 " олово лол ололо ллоло лава ово лово лол во овал аоав",
+                                 " воаал влвао лаоов лвлоа алвво вово лава овал алла ол"};
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
+        {Key.OemTilde, "ё" },
         {Key.OemOpenBrackets, "х" },
         {Key.OemCloseBrackets, "ъ" },
         {Key.OemQuotes, "э" },
@@ -177,9 +178,9 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                     ProgressTextBox.TextAlignment = TextAlignment.Center;
 
                     progressBar.Value = 0;
-                }  
+                }
 
-                else if ( key == "esc")
+                else if (key == "esc")
                 {
                     MessageBoxResult result = MessageBox.Show("Вы уверены, что хотите вернуться?", "Подтверждение", MessageBoxButton.YesNo);
 
@@ -201,20 +202,24 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                 {
                     correctCount++;
 
-                    if (currentIndex == letters[currentLevel].Length-1)
+                    if (currentIndex == letters[currentLevel].Length - 1)
                     {
                         currentIndex = 0;
                         currentLevel++;
                         ProgressTextBox.Text = letters[currentLevel];
                     }
 
-                    if (currentLevel == letters.Length-1)
+                    if (currentLevel == letters.Length - 1)
                     {
+                        var brush = new SolidColorBrush(Color.FromRgb(0xDD, 0xDD, 0xDD));
+
                         isStarted = false;
 
                         timer.Stop();
 
                         currentLevel = 0;
+                        K.Background = brush;
+
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
 
@@ -223,8 +228,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     else
                     {
-                        ProgressTextBox.SelectionStart = currentIndex;
-                        ProgressTextBox.SelectionLength = 1;
+                        ProgressTextBox.SelectionStart = 1;
+                        ProgressTextBox.SelectionLength = currentIndex;
                         ProgressTextBox.SelectionBrush = Brushes.Black;
 
                         currentIndex++;

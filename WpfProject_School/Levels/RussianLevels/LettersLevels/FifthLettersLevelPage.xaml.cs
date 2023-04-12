@@ -41,21 +41,22 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
-        private string[] letters = { "уууггг уугуг гуугг угугу ггугу лужа враг угууг гугуг",
-                                     "выгнать надолго уважать гном внутри кккггг ккгкг гккгг",
-                                     "кгкгк ггкгк гора кино кгккг гкгкг тетка проект также",
-                                     "поддержка платок шшшккк шшкшк кшшкк шкшкш ккшкш кто шкаф",
-                                     "шкшшк кшкшк крепко нитка мышь крыша штука ууушшш уушуш", 
-                                     "шуушш ушушу шшушу кушать кулак ушууш шушуш нету культура",
-                                     "пошутить купол каша уууккк ккуку уккуу шапка уважать",
-                                     "кукук уукук калитка покупатель придумать прогулка",
-                                     "картинка гггшшш ггшгш шггшш выгнать штаны гшгшг шшгшг",
-                                     "отношение глупо внешне девушка окошко кгкуш гушшк гкгшу",
-                                     "угккш ушукг шкггу шушгк кшууг кот око уголь гад помогать",
-                                     "дружно формула волк недалеко гореть актер катер" };
+        private string[] letters = { " уууггг уугуг гуугг угугу ггугу лужа враг угууг гугуг",
+                                     " выгнать надолго уважать гном внутри кккггг ккгкг гккгг",
+                                     " кгкгк ггкгк гора кино кгккг гкгкг тетка проект также",
+                                     " поддержка платок шшшккк шшкшк кшшкк шкшкш ккшкш кто шкаф",
+                                     " шкшшк кшкшк крепко нитка мышь крыша штука ууушшш уушуш", 
+                                     " шуушш ушушу шшушу кушать кулак ушууш шушуш нету культура",
+                                     " пошутить купол каша уууккк ккуку уккуу шапка уважать",
+                                     " кукук уукук калитка покупатель придумать прогулка",
+                                     " картинка гггшшш ггшгш шггшш выгнать штаны гшгшг шшгшг",
+                                     " отношение глупо внешне девушка окошко кгкуш гушшк гкгшу",
+                                     " угккш ушукг шкггу шушгк кшууг кот око уголь гад помогать",
+                                     " дружно формула волк недалеко гореть актер катер" };
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
+        {Key.OemTilde, "ё" },
         {Key.OemOpenBrackets, "х" },
         {Key.OemCloseBrackets, "ъ" },
         {Key.OemQuotes, "э" },
@@ -212,11 +213,15 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     if (currentLevel == letters.Length - 1)
                     {
+                        var brush = new SolidColorBrush(Color.FromRgb(0xDD, 0xDD, 0xDD));
+
                         isStarted = false;
 
                         timer.Stop();
 
                         currentLevel = 0;
+                        H.Background = brush;
+
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
 
@@ -225,8 +230,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     else
                     {
-                        ProgressTextBox.SelectionStart = currentIndex;
-                        ProgressTextBox.SelectionLength = 1;
+                        ProgressTextBox.SelectionStart = 1;
+                        ProgressTextBox.SelectionLength = currentIndex;
                         ProgressTextBox.SelectionBrush = Brushes.Black;
 
                         currentIndex++;

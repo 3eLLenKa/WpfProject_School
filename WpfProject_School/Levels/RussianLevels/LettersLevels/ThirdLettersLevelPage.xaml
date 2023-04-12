@@ -23,7 +23,7 @@
                 </TextBlock.Effect>
             </TextBlock>
 
-            <ProgressBar x:Name="progressBar" Height="10" Width="300" Minimum="0" Maximum="536" Value="0" Margin="195,82,425,-22" />
+            <ProgressBar x:Name="progressBar" Height="10" Width="300" Minimum="0" Maximum="547" Value="0" Margin="195,82,425,-22" />
             <TextBlock Text="Ваш прогресс:" FontSize="20" Foreground="White" Height="30" Margin="50,69,730,-29"/>
             <TextBlock x:Name="timeBlock" FontSize="20" Text="Время: 00:00" Foreground="White" Margin="746,70,49,-31"/>
             <TextBlock x:Name="tempTextBlock" Visibility="Hidden"/>

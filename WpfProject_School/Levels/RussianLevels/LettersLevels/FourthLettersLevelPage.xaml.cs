@@ -41,22 +41,23 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
-        private string[] letters = { "еееннн еенен неенн енене ннене налево давление енеен",
-                                     "ненен фон фонтан недовольно отдел нефть пппннн ппнпн",
-                                     "нппнн пнпнп ннпнп поди темнота пнппн нпнпн плод папа",
-                                     "положить пот тепло рррппп ррпрп пррпп рпрпр полдень",
-                                     "тропа рпррп прпрп ведро форма правило портрет недаром",
-                                     "еееррр еерер реерр ерере ррере париж полететь ереер",
-                                     "ререр надевать направо нерв надежда пожар еееппп ппепе",
-                                     "еппее прижать номер пепеп пожать преодолеть пилить",
-                                     "лететь поворот нннррр ннрнр рннрр наверно трава нрнрн",
-                                     "ррнрн дерево радио вариант перевод тень пнпер неррп",
-                                     "нпнре енппр ерепн рпнне рернп преен поделать европа",
-                                     "тревожно материал надел видеть лидер определение",
-                                     "правитель важно телефон" };
+        private string[] letters = { " еееннн еенен неенн енене ннене налево давление енеен",
+                                     " ненен фон фонтан недовольно отдел нефть пппннн ппнпн",
+                                     " нппнн пнпнп ннпнп поди темнота пнппн нпнпн плод папа",
+                                     " положить пот тепло рррппп ррпрп пррпп рпрпр полдень",
+                                     " тропа рпррп прпрп ведро форма правило портрет недаром",
+                                     " еееррр еерер реерр ерере ррере париж полететь ереер",
+                                     " ререр надевать направо нерв надежда пожар еееппп ппепе",
+                                     " еппее прижать номер пепеп пожать преодолеть пилить",
+                                     " лететь поворот нннррр ннрнр рннрр наверно трава нрнрн",
+                                     " ррнрн дерево радио вариант перевод тень пнпер неррп",
+                                     " нпнре енппр ерепн рпнне рернп преен поделать европа",
+                                     " тревожно материал надел видеть лидер определение",
+                                     " правитель важно телефон" };
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
+        {Key.OemTilde, "ё" },
         {Key.OemOpenBrackets, "х" },
         {Key.OemCloseBrackets, "ъ" },
         {Key.OemQuotes, "э" },
@@ -213,11 +214,15 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     if (currentLevel == letters.Length - 1)
                     {
+                        var brush = new SolidColorBrush(Color.FromRgb(0xDD, 0xDD, 0xDD));
+
                         isStarted = false;
 
                         timer.Stop();
 
                         currentLevel = 0;
+                        Y.Background = brush;
+
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
 
@@ -226,8 +231,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     else
                     {
-                        ProgressTextBox.SelectionStart = currentIndex;
-                        ProgressTextBox.SelectionLength = 1;
+                        ProgressTextBox.SelectionStart = 1;
+                        ProgressTextBox.SelectionLength = currentIndex;
                         ProgressTextBox.SelectionBrush = Brushes.Black;
 
                         currentIndex++;

@@ -41,19 +41,20 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
-        private string[] letters = { "фффддд ффдфд дффдд фдфдф ддфдф вода два фдффд дфдфд",
-                                     "вдова вода два два вдова ыыыддд ыыдыд дыыдд ыды два",
-                                     "вывод два ыдыыд дыдыд вывод вода два вдова вывод вдв",
-                                     "жжыжы ыжжыы жыжыж ыыжыж лыжа дважды жыжжы ыжы вывод",
-                                     "жажда лыжа дважды жажда фффжж ффжфж жфж фжфжф жжфжф",
-                                     "жажда ффжф фжффж жфжфж дважды лыжа дважды жажда лыжа",
-                                     "фффыыы ыыфыф фыыфф лыжа ыфыфы ффыфы дважды вывод",
-                                     "лыжа вывод дважды ддджжж ждджж вдова лыжа джджд",
-                                     "жжджд вывод жажда вода дважды два ыдыфж дфжжы дыджф",
-                                     "фдыыж фжфыд жыддф жфжды ыжффд вывод вдова вода дважды" };
+        private string[] letters = { " фффддд ффдфд дффдд фдфдф ддфдф вода два фдффд дфдфд",
+                                     " вдова вода два два вдова ыыыддд ыыдыд дыыдд ыды два",
+                                     " вывод два ыдыыд дыдыд вывод вода два вдова вывод вдв",
+                                     " жжыжы ыжжыы жыжыж ыыжыж лыжа дважды жыжжы ыжы вывод",
+                                     " жажда лыжа дважды жажда фффжж ффжфж жфж фжфжф жжфжф",
+                                     " жажда ффжф фжффж жфжфж дважды лыжа дважды жажда лыжа",
+                                     " фффыыы ыыфыф фыыфф лыжа ыфыфы ффыфы дважды вывод",
+                                     " лыжа вывод дважды ддджжж ждджж вдова лыжа джджд",
+                                     " жжджд вывод жажда вода дважды два ыдыфж дфжжы дыджф",
+                                     " фдыыж фжфыд жыддф жфжды ыжффд вывод вдова вода дважды" };
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
+        {Key.OemTilde, "ё" },
         {Key.OemOpenBrackets, "х" },
         {Key.OemCloseBrackets, "ъ" },
         {Key.OemQuotes, "э" },
@@ -210,11 +211,15 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     if (currentLevel == letters.Length - 1)
                     {
+                        var brush = new SolidColorBrush(Color.FromRgb(0xDD, 0xDD, 0xDD));
+
                         isStarted = false;
 
                         timer.Stop();
 
                         currentLevel = 0;
+                        S.Background = brush;
+
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
 
@@ -223,8 +228,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     else
                     {
-                        ProgressTextBox.SelectionStart = currentIndex;
-                        ProgressTextBox.SelectionLength = 1;
+                        ProgressTextBox.SelectionStart = 1;
+                        ProgressTextBox.SelectionLength = currentIndex;
                         ProgressTextBox.SelectionBrush = Brushes.Black;
 
                         currentIndex++;

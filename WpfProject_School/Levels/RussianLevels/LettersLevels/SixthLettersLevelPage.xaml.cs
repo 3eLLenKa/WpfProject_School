@@ -41,23 +41,24 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
-        private string[] letters = { "чччббб ччбчб бччбб чбчбч ббчбч учеба благо чбччб",
-                                     "бчбчб чтобы учитывать чтение побежать рыба сссббб",
-                                     "ссбсб бссбб сбсбс ббсбс спектакль бесплатно сбссб",
-                                     "бсбсб библиотека обман послушно остальное напасть",
-                                     "юююссс ююсюс сююсс юсюсю ссюсю сапог чувство юсююс",
-                                     "сюсюс надпись пропуск творчество миска выпасть чччююю",
-                                     "ччючю юччюю чючюч юючюч бабочка чудак чюччю ючючю",
-                                     "печатать читать обочина сочинение беречь чччссс ссчсч",
-                                     "чссчч курс отчетливо счсчс ччсчс вместе сволочь собирать",
-                                     "министерство радость бббююю ббюбю юббюю обман бюбюб",
-                                     "ююбюб компьютер юмор бог берлин усадьба сбсчю бчююс",
-                                     "бсбюч чбссю чючсб юсббч ючюбс сюччб мрачно трудность",
-                                     "бюро считать ночевать обеспечение установка население",
-                                     "поворачивать считать старушка" };
+        private string[] letters = { " чччббб ччбчб бччбб чбчбч ббчбч учеба благо чбччб",
+                                     " бчбчб чтобы учитывать чтение побежать рыба сссббб",
+                                     " ссбсб бссбб сбсбс ббсбс спектакль бесплатно сбссб",
+                                     " бсбсб библиотека обман послушно остальное напасть",
+                                     " юююссс ююсюс сююсс юсюсю ссюсю сапог чувство юсююс",
+                                     " сюсюс надпись пропуск творчество миска выпасть чччююю",
+                                     " ччючю юччюю чючюч юючюч бабочка чудак чюччю ючючю",
+                                     " печатать читать обочина сочинение беречь чччссс ссчсч",
+                                     " чссчч курс отчетливо счсчс ччсчс вместе сволочь собирать",
+                                     " министерство радость бббююю ббюбю юббюю обман бюбюб",
+                                     " ююбюб компьютер юмор бог берлин усадьба сбсчю бчююс",
+                                     " бсбюч чбссю чючсб юсббч ючюбс сюччб мрачно трудность",
+                                     " бюро считать ночевать обеспечение установка население",
+                                     " поворачивать считать старушка" };
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
+        {Key.OemTilde, "ё" },
         {Key.OemOpenBrackets, "х" },
         {Key.OemCloseBrackets, "ъ" },
         {Key.OemQuotes, "э" },
@@ -214,11 +215,15 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     if (currentLevel == letters.Length - 1)
                     {
+                        var brush = new SolidColorBrush(Color.FromRgb(0xDD, 0xDD, 0xDD));
+
                         isStarted = false;
 
                         timer.Stop();
 
                         currentLevel = 0;
+                        F.Background = brush;
+
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
 
@@ -227,8 +232,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     else
                     {
-                        ProgressTextBox.SelectionStart = currentIndex;
-                        ProgressTextBox.SelectionLength = 1;
+                        ProgressTextBox.SelectionStart = 1;
+                        ProgressTextBox.SelectionLength = currentIndex;
                         ProgressTextBox.SelectionBrush = Brushes.Black;
 
                         currentIndex++;

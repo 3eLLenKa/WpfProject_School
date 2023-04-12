@@ -41,23 +41,24 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
-        private string[] letters = { "йййщщщ ййщйщ щййщщ йщйщй щщйщй тревожный обращать",
-                                     "щйщйщ согласный внешний майка тщательно тощий цццщщщ",
-                                     "ццщцщ щццщщ цщцщц щщцщц ощущение птица цщццщ щцщцщ",
-                                     "полотенце сообщение щель щенок пришелец зззццц ззцзц",
-                                     "цззцц зцзцз ццзцз француз боцман зцззц цзцзц двадцать",
-                                     "сквозь затем запеть конец йййззз ййзйз зййзз йзйзй",
-                                     "ззйзй дурацкий музей йзййз зйзйз казак быстрый",
-                                     "благородный замолчать золото йййццц ццйцй неторопливый",
-                                     "нищий цйцйц ййцйц областной изумрудный красавица ресница",
-                                     "быстрый щщщззз щщзщз зщщзз возвращение газета щзщзщ",
-                                     "ззщзщ вообще ощутить французский газетный поезд цщцйз",
-                                     "щйззц щцщзй йщццз йзйцщ зцщщй зйзщц цзййщ известный",
-                                     "тройка зеленый гостиница дверца согласный редкий",
-                                     "вызвать роскошный заведующий" };
+        private string[] letters = { " йййщщщ ййщйщ щййщщ йщйщй щщйщй тревожный обращать",
+                                     " щйщйщ согласный внешний майка тщательно тощий цццщщщ",
+                                     " ццщцщ щццщщ цщцщц щщцщц ощущение птица цщццщ щцщцщ",
+                                     " полотенце сообщение щель щенок пришелец зззццц ззцзц",
+                                     " цззцц зцзцз ццзцз француз боцман зцззц цзцзц двадцать",
+                                     " сквозь затем запеть конец йййззз ййзйз зййзз йзйзй",
+                                     " ззйзй дурацкий музей йзййз зйзйз казак быстрый",
+                                     " благородный замолчать золото йййццц ццйцй неторопливый",
+                                     " нищий цйцйц ййцйц областной изумрудный красавица ресница",
+                                     " быстрый щщщззз щщзщз зщщзз возвращение газета щзщзщ",
+                                     " ззщзщ вообще ощутить французский газетный поезд цщцйз",
+                                     " щйззц щцщзй йщццз йзйцщ зцщщй зйзщц цзййщ известный",
+                                     " тройка зеленый гостиница дверца согласный редкий",
+                                     " вызвать роскошный заведующий" };
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
+        {Key.OemTilde, "ё" },
         {Key.OemOpenBrackets, "х" },
         {Key.OemCloseBrackets, "ъ" },
         {Key.OemQuotes, "э" },
@@ -214,11 +215,15 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     if (currentLevel == letters.Length - 1)
                     {
+                        var brush = new SolidColorBrush(Color.FromRgb(0xDD, 0xDD, 0xDD));
+
                         isStarted = false;
 
                         timer.Stop();
 
                         currentLevel = 0;
+                        Q.Background = brush;
+
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
 
@@ -227,8 +232,8 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                     else
                     {
-                        ProgressTextBox.SelectionStart = currentIndex;
-                        ProgressTextBox.SelectionLength = 1;
+                        ProgressTextBox.SelectionStart = 1;
+                        ProgressTextBox.SelectionLength = currentIndex;
                         ProgressTextBox.SelectionBrush = Brushes.Black;
 
                         currentIndex++;
