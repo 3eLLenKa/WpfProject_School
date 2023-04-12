@@ -31,11 +31,13 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         private DispatcherTimer timer;
 
         private bool isStarted = false;
-        private bool isTrueKey;
 
         private int currentIndex = 0;
         private int currentLevel = 0;
         private int errosCount = 0;
+
+        private double correctCount = 0;
+        private double clicksCount = 0;
 
         private int secondsElapsed;
         private int minutesElapsed;
@@ -52,15 +54,12 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
-        {Key.Oem1, "Oem1"},
-        {Key.Oem2, "Oem2"},
-        {Key.Oem3, "Oem3"},
-        {Key.Oem4, "Oem4"},
-        {Key.Oem5, "Oem5"},
-        {Key.Oem6, "Oem6"},
-        {Key.Oem7, "Oem7"},
-        {Key.Oem8, "Oem8"},
-        {Key.OemAttn, "Oem9"},
+        {Key.OemOpenBrackets, "х" },
+        {Key.OemCloseBrackets, "ъ" },
+        {Key.OemQuotes, "э" },
+        {Key.Oem1, "ж" },
+        {Key.OemComma, "б" },
+        {Key.OemPeriod, "ю" },
         { Key.A, "ф" },
         { Key.B, "и" },
         { Key.C, "с" },
@@ -91,11 +90,75 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
         {Key.Escape, "esc" }
         };
 
+        private Dictionary<Key, string> KeyboardButtons = new Dictionary<Key, string>
+        {
+        {Key.D1, "D1"},
+        {Key.D2, "D2"},
+        {Key.D3, "D3"},
+        {Key.D4, "D4"},
+        {Key.D5, "D5"},
+        {Key.D6, "D6"},
+        {Key.D7, "D7"},
+        {Key.D8, "D8"},
+        {Key.D9, "D9"},
+        {Key.D0, "D0"},
+        {Key.OemMinus, "OemMinus" },
+        {Key.OemTilde, "OemTilde" },
+        {Key.OemPlus, "OemPlus" },
+        {Key.Back, "Back" },
+        {Key.Tab, "Tab" },
+        {Key.Oem5, "Oem5" },
+        {Key.CapsLock, "CapsLock" },
+        {Key.Enter, "Enter" },
+        {Key.LeftShift, "LeftShift" },
+        {Key.RightShift, "RightShift" },
+        {Key.LeftCtrl, "LeftCtrl" },
+        {Key.RightCtrl, "RightCtrl" },
+        {Key.LWin, "LWin" },
+        {Key.RWin, "RWin" },
+        {Key.OemQuestion, "OemQuestion" },
+        {Key.OemOpenBrackets, "OemOpenBrackets" },
+        {Key.OemCloseBrackets, "OemCloseBrackets" },
+        {Key.OemQuotes, "OemQuotes" },
+        {Key.Oem1, "Oem1" },
+        {Key.OemComma, "OemComma" },
+        {Key.OemPeriod, "OemPeriod" },
+        { Key.A, "A" },
+        { Key.B, "B" },
+        { Key.C, "C" },
+        { Key.D, "D" },
+        { Key.E, "E" },
+        { Key.F, "F" },
+        { Key.G, "G" },
+        { Key.H, "H" },
+        { Key.I, "I" },
+        { Key.J, "J" },
+        { Key.K, "K" },
+        { Key.L, "L" },
+        { Key.M, "M" },
+        { Key.N, "N" },
+        { Key.O, "O" },
+        { Key.P, "P" },
+        { Key.Q, "Q" },
+        { Key.R, "R" },
+        { Key.S, "S" },
+        { Key.T, "T" },
+        { Key.U, "U" },
+        { Key.V, "V" },
+        { Key.W, "W" },
+        { Key.X, "X" },
+        { Key.Y, "Y" },
+        { Key.Z, "Z" },
+        {Key.Space, "Space" }
+        };
+
         private void ProgressTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             e.Handled = true;
 
             string key = EnglishToRussianLetters.ContainsKey(e.Key) ? EnglishToRussianLetters[e.Key] : null;
+
+            clicksCount++;
 
             if (!isStarted)
             {
@@ -114,7 +177,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                     ProgressTextBox.TextAlignment = TextAlignment.Center;
 
                     progressBar.Value = 0;
-                }
+                }  
 
                 else if ( key == "esc")
                 {
@@ -136,7 +199,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             {
                 if (key == ProgressTextBox.Text[currentIndex].ToString())
                 {
-                    isTrueKey = true;
+                    correctCount++;
 
                     if (currentIndex == letters[currentLevel].Length-1)
                     {
@@ -155,7 +218,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
 
-                        MessageBox.Show($"Кол - во ошибок: {errosCount} \nЗатраченное время: {timeBlock.Text.Substring(7, 5)}", "Результаты тренировки");
+                        MessageBox.Show($"Кол - во ошибок: {errosCount} \nСредняя точность: {averageAccuracy()} \nЗатраченное время: {timeBlock.Text.Substring(7, 5)}", "Результаты тренировки");
                     }
 
                     else
@@ -189,7 +252,6 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
                 else
                 {
-                    isTrueKey = false;
                     errosCount++;
                 }
             }
@@ -227,7 +289,9 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
         private void ButtonPreview_Up(object sender, KeyEventArgs e)
         {
-            string keyPressed = EnglishToRussianLetters.ContainsKey(e.Key) ? EnglishToRussianLetters[e.Key] : null;
+            var brush = new SolidColorBrush(Color.FromRgb(0xDD, 0xDD, 0xDD));
+
+            string keyPressed = KeyboardButtons.ContainsKey(e.Key) ? KeyboardButtons[e.Key] : null;
 
             // Находим кнопку с соответствующим именем
             Button button = (Button)this.FindName(keyPressed);
@@ -235,13 +299,21 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             // Если кнопка найдена, меняем её фон в зависимости от нажатой клавиши
             if (button != null)
             {
-                button.Background = Brushes.White;
+                button.Background = brush;
+            }
+
+            if (e.Key.ToString() == "System")
+            {
+                LeftAlt.Background = brush;
+                RightAlt.Background = brush;
             }
         }
 
         private void ButtonPreview_Down(object sender, KeyEventArgs e)
         {
-            string keyPressed = EnglishToRussianLetters.ContainsKey(e.Key) ? EnglishToRussianLetters[e.Key] : null;
+            var brush = new SolidColorBrush(Color.FromRgb(0xB3, 0x9D, 0xDB));
+
+            string keyPressed = KeyboardButtons.ContainsKey(e.Key) ? KeyboardButtons[e.Key] : null;
 
             // Находим кнопку с соответствующим именем
             Button button = (Button)this.FindName(keyPressed);
@@ -249,12 +321,21 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             // Если кнопка найдена, меняем её фон в зависимости от нажатой клавиши
             if (button != null)
             {
-                if (isTrueKey)
-                {
-                    button.Background = Brushes.Green;
-                }
-                else button.Background = Brushes.Red;
+                button.Background = brush;
             }
+
+            if (e.Key.ToString() == "System")
+            {
+                LeftAlt.Background = brush;
+                RightAlt.Background = brush;
+            }
+
+        }
+
+        private string averageAccuracy()
+        {
+            string accuracy = Math.Round(correctCount / clicksCount * 100).ToString() + "%";
+            return accuracy;
         }
 
         private void ProgressTextBox_PreviewMouseDown(object sender, MouseEventArgs e)
