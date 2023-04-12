@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -219,6 +220,16 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
             {
                 ProgressTextBox.Focus();
             }
+        }
+
+        private void TextColor()
+        {
+            char temp = ProgressTextBox.Text[currentIndex];
+
+            
+
+
+
         }
         private void ProgressTextBox_PreviewMouseDown(object sender, MouseEventArgs e)
         {
