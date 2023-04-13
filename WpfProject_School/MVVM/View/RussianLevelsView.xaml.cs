@@ -159,7 +159,7 @@ namespace WpfProject_School.MVVM.View
         }
 
 
-        //Event Args numbers and symbols levels buttons
+        //Event Args punctuation levels buttons
 
 
         private void FirstPunctuationPageNavigation(object sender, RoutedEventArgs e)

@@ -73,6 +73,66 @@
     <Compile Include="LevelsPage.xaml.cs">
       <DependentUpon>LevelsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Levels\EnglishLevels\LettersLevels\EighthLettersPage.xaml.cs">
+      <DependentUpon>EighthLettersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\LettersLevels\FifthLettersPage.xaml.cs">
+      <DependentUpon>FifthLettersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\LettersLevels\FirstLettersPage.xaml.cs">
+      <DependentUpon>FirstLettersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\LettersLevels\FourthLettersPage.xaml.cs">
+      <DependentUpon>FourthLettersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\LettersLevels\SecondLettersPage.xaml.cs">
+      <DependentUpon>SecondLettersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\LettersLevels\SeventhLettersPage.xaml.cs">
+      <DependentUpon>SeventhLettersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\LettersLevels\SixthLettersPage.xaml.cs">
+      <DependentUpon>SixthLettersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\LettersLevels\ThirdLettersPage.xaml.cs">
+      <DependentUpon>ThirdLettersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\NumbersAndSymbolsLevels\FirstNumbersPage.xaml.cs">
+      <DependentUpon>FirstNumbersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\NumbersAndSymbolsLevels\FourthNumbersPage.xaml.cs">
+      <DependentUpon>FourthNumbersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\NumbersAndSymbolsLevels\SecondNumbersPage.xaml.cs">
+      <DependentUpon>SecondNumbersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\NumbersAndSymbolsLevels\ThirdNumbersPage.xaml.cs">
+      <DependentUpon>ThirdNumbersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\PunctuationMarksLevels\FirstPunctuationPage.xaml.cs">
+      <DependentUpon>FirstPunctuationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\PunctuationMarksLevels\FourthPunctuationPage.xaml.cs">
+      <DependentUpon>FourthPunctuationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\PunctuationMarksLevels\SecondPunctuationPage.xaml.cs">
+      <DependentUpon>SecondPunctuationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\PunctuationMarksLevels\ThirdPunctuationPage.xaml.cs">
+      <DependentUpon>ThirdPunctuationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\WordsLevels\FirstWordsPage.xaml.cs">
+      <DependentUpon>FirstWordsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\WordsLevels\FourthWordsPage.xaml.cs">
+      <DependentUpon>FourthWordsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\WordsLevels\SecondWordsPage.xaml.cs">
+      <DependentUpon>SecondWordsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Levels\EnglishLevels\WordsLevels\ThirdWordsPage.xaml.cs">
+      <DependentUpon>ThirdWordsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Levels\RussianLevels\LettersLevels\EighthLettersLevelPage.xaml.cs">
       <DependentUpon>EighthLettersLevelPage.xaml</DependentUpon>
     </Compile>
@@ -175,6 +235,86 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LevelsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\LettersLevels\EighthLettersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\LettersLevels\FifthLettersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\LettersLevels\FirstLettersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\LettersLevels\FourthLettersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\LettersLevels\SecondLettersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\LettersLevels\SeventhLettersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\LettersLevels\SixthLettersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\LettersLevels\ThirdLettersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\NumbersAndSymbolsLevels\FirstNumbersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\NumbersAndSymbolsLevels\FourthNumbersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\NumbersAndSymbolsLevels\SecondNumbersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\NumbersAndSymbolsLevels\ThirdNumbersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\PunctuationMarksLevels\FirstPunctuationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\PunctuationMarksLevels\FourthPunctuationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\PunctuationMarksLevels\SecondPunctuationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\PunctuationMarksLevels\ThirdPunctuationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\WordsLevels\FirstWordsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\WordsLevels\FourthWordsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\WordsLevels\SecondWordsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Levels\EnglishLevels\WordsLevels\ThirdWordsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -368,9 +508,7 @@
   <ItemGroup>
     <Resource Include="Images\background.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Levels\EnglishLevels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.7.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.7.1\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

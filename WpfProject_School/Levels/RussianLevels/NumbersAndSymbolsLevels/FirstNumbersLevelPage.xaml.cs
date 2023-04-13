@@ -41,7 +41,7 @@ namespace WpfProject_School.Levels.RussianLevels.NumbersAndSymbolsLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
-        private string[] letters = { " 555777 55757 75577 57575 77575 57 75 57557 75757",
+        private string[] letters = { " 55777 55757 75577 57575 77575 57 75 57557 75757",
                                      " 7 7557 5 77 57 666777 66767 76677 67676 77676 67",
                                      " 76 67667 76767 6 56 65 66 567 888666 88686 68866",
                                      " 86868 66868 86 68 86886 68686 8 87 78 85 58 555888",
@@ -51,41 +51,20 @@ namespace WpfProject_School.Levels.RussianLevels.NumbersAndSymbolsLevels
                                      " 76 588 868 7 67658 75886 76785 57668 58567 86775",
                                      " 85876 68557 65 856 55 8 686 86 867 557 678 755" };
 
+        
+
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
-        {Key.OemTilde, "ё" },
-        {Key.OemOpenBrackets, "х" },
-        {Key.OemCloseBrackets, "ъ" },
-        {Key.OemQuotes, "э" },
-        {Key.Oem1, "ж" },
-        {Key.OemComma, "б" },
-        {Key.OemPeriod, "ю" },
-        { Key.A, "ф" },
-        { Key.B, "и" },
-        { Key.C, "с" },
-        { Key.D, "в" },
-        { Key.E, "у" },
-        { Key.F, "а" },
-        { Key.G, "п" },
-        { Key.H, "р" },
-        { Key.I, "ш" },
-        { Key.J, "о" },
-        { Key.K, "л" },
-        { Key.L, "д" },
-        { Key.M, "ь" },
-        { Key.N, "т" },
-        { Key.O, "щ" },
-        { Key.P, "з" },
-        { Key.Q, "й" },
-        { Key.R, "к" },
-        { Key.S, "ы" },
-        { Key.T, "е" },
-        { Key.U, "г" },
-        { Key.V, "м" },
-        { Key.W, "ц" },
-        { Key.X, "ч" },
-        { Key.Y, "н" },
-        { Key.Z, "я" },
+        {Key.D1, "1"},
+        {Key.D2, "2"},
+        {Key.D3, "3"},
+        {Key.D4, "4"},
+        {Key.D5, "5"},
+        {Key.D6, "6"},
+        {Key.D7, "7"},
+        {Key.D8, "8"},
+        {Key.D9, "9"},  
+        {Key.D0, "0"},
         {Key.Space, " " },
         {Key.Escape, "esc" }
         };

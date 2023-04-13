@@ -31,7 +31,7 @@ namespace WpfProject_School.Levels.RussianLevels.LettersLevels
 
         private bool isStarted = false;
 
-        private int currentIndex = 0;
+        private int currentIndex = 1;
         private int currentLevel = 0;
         private int errosCount = 0;
 
