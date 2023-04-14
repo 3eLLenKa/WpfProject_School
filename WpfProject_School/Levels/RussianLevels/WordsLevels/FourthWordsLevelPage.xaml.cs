@@ -89,8 +89,10 @@ namespace WpfProject_School.Levels.RussianLevels.WordsLevels
         { Key.Y, "н" },
         { Key.Z, "я" },
         {Key.Space, " " },
-        {Key.Escape, "esc" }
+        {Key.Escape, "esc" },
+        {Key.LeftShift, "" }
         };
+
 
         private Dictionary<Key, string> KeyboardButtons = new Dictionary<Key, string>
         {
@@ -159,6 +161,11 @@ namespace WpfProject_School.Levels.RussianLevels.WordsLevels
             e.Handled = true;
 
             string key = EnglishToRussianLetters.ContainsKey(e.Key) ? EnglishToRussianLetters[e.Key] : null;
+
+            if (Keyboard.IsKeyDown(Key.LeftShift) && e.IsDown)
+            {
+                key = key.ToUpper();
+            }
 
             clicksCount++;
 

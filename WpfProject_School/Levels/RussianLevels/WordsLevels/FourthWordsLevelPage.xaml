@@ -104,7 +104,7 @@
                             <Button x:Name="Space" IsHitTestVisible="False" Content="Space" FontSize="25" Width="365" Height="50"/>
                             <Button x:Name="RightAlt" IsHitTestVisible="False" Content="Alt" FontSize="25" Width="71" Height="50"/>
                             <Button x:Name="RWin" IsHitTestVisible="False" Content="Win" FontSize="25" Width="71" Height="50"/>
-                            <Button x:Name="RCtrl" IsHitTestVisible="False" Content="Ctrl" FontSize="25" Width="97" Height="50"/>
+                            <Button x:Name="RightCtrl" IsHitTestVisible="False" Content="Ctrl" FontSize="25" Width="97" Height="50"/>
                         </StackPanel>
                     </Grid>
                 </Border>
