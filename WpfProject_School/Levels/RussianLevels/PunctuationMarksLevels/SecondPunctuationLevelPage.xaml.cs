@@ -59,6 +59,10 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
+        {Key.D1, "!" },
+        {Key.D2, "\""},
+        {Key.D7, "?" },
+        {Key.OemMinus, "-" },
         {Key.OemTilde, "ё" },
         {Key.OemOpenBrackets, "х" },
         {Key.OemCloseBrackets, "ъ" },
@@ -93,7 +97,8 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
         { Key.Y, "н" },
         { Key.Z, "я" },
         {Key.Space, " " },
-        {Key.Escape, "esc" }
+        {Key.Escape, "esc" },
+        {Key.LeftShift, "" }
         };
 
         private Dictionary<Key, string> KeyboardButtons = new Dictionary<Key, string>
@@ -160,9 +165,42 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
 
         private void ProgressTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            //MessageBox.Show($"{e.Key}");
+
             e.Handled = true;
 
             string key = EnglishToRussianLetters.ContainsKey(e.Key) ? EnglishToRussianLetters[e.Key] : null;
+
+            if (key != null && key.Any(char.IsPunctuation))
+            {
+                if (Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.OemMinus))
+                {
+                    return;
+                }
+
+                if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D1))
+                {
+                    return;
+                }
+
+                if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D2))
+                {
+                    return;
+                }
+
+                if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D7))
+                {
+                    return;
+                }
+            }
+
+            if (key != null && key.Any(char.IsLetter))
+            {
+                if (Keyboard.IsKeyDown(Key.LeftShift) && e.IsDown)
+                {
+                    key = key.ToUpper();
+                }
+            }
 
             clicksCount++;
 
@@ -223,7 +261,7 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                         timer.Stop();
 
                         currentLevel = 0;
-                        D1.Background = brush;
+                        Q.Background = brush;
 
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
@@ -339,7 +377,6 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                 LeftAlt.Background = brush;
                 RightAlt.Background = brush;
             }
-
         }
 
         private string averageAccuracy()

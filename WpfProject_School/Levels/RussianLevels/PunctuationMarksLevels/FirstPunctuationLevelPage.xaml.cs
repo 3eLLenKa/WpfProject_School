@@ -96,12 +96,6 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
         {Key.LeftShift, "" }
         };
 
-        private Dictionary<Key, string> PunctuationMarks = new Dictionary<Key, string>
-        {
-            {Key.D4, ";" },
-            {Key.OemQuestion, "." }
-        };
-
         private Dictionary<Key, string> KeyboardButtons = new Dictionary<Key, string>
         {
         {Key.D1, "D1"},
@@ -185,7 +179,7 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                 }
 
                 if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D4))
-                {
+                { 
                     return;
                 }
 
@@ -193,9 +187,7 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                 {
                     return;
                 }
-            }
-
-            
+            }  
 
             if (key != null && key.Any(char.IsLetter))
             {
@@ -204,6 +196,12 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                     key = key.ToUpper();
                 }
             }
+
+            if (char.IsPunctuation(ProgressTextBox.Text[currentIndex+1]))
+            {
+                ButtonsPunctuationContent();
+            }
+            else ButtonsLettersContent();
 
             clicksCount++;
 
@@ -381,6 +379,42 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                 RightAlt.Background = brush;
             }
 
+        }
+
+        private void ButtonsPunctuationContent()
+        {
+            OemTilde.Content = "~Ё`";
+            D1.Content = "1 !";
+            D2.Content = "2\"";
+            D3.Content = "3№";
+            D4.Content = "4;";
+            D5.Content = "5%";
+            D6.Content = "6:";
+            D7.Content = "7?";
+            D8.Content = "8*";
+            D9.Content = "9 (";
+            D0.Content = "0 )";
+            OemMinus.Content = "-_";
+            OemPlus.Content = "=+";
+            OemQuestion.Content = ".,";
+        }
+
+        private void ButtonsLettersContent()
+        {
+            OemTilde.Content = "ё";
+            D1.Content = "1";
+            D2.Content = "2";
+            D3.Content = "3";
+            D4.Content = "4";
+            D5.Content = "5";
+            D6.Content = "6";
+            D7.Content = "7";
+            D8.Content = "8";
+            D9.Content = "9";
+            D0.Content = "0";
+            OemMinus.Content = "-";
+            OemPlus.Content = "=";
+            OemQuestion.Content = ".";
         }
 
         private string averageAccuracy()
