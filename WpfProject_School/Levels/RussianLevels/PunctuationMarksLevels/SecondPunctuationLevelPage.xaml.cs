@@ -202,6 +202,30 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                 }
             }
 
+            if (key != null && key.Any(char.IsLetter))
+            {
+                if (Keyboard.IsKeyDown(Key.LeftShift) && e.IsDown)
+                {
+                    key = key.ToUpper();
+                }
+            }
+
+            if (currentIndex + 1 < ProgressTextBox.Text.Length && char.IsPunctuation(ProgressTextBox.Text[currentIndex + 1]))
+            {
+                if (currentIndex == letters[currentLevel].Length - 1)
+                {
+                    return;
+                }
+                else
+                {
+                    ButtonsPunctuationContent();
+                }
+            }
+            else
+            {
+                ButtonsLettersContent();
+            }
+
             clicksCount++;
 
             if (!isStarted)
@@ -377,6 +401,42 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                 LeftAlt.Background = brush;
                 RightAlt.Background = brush;
             }
+        }
+
+        private void ButtonsPunctuationContent()
+        {
+            OemTilde.Content = "~Ё`";
+            D1.Content = "1 !";
+            D2.Content = "2\"";
+            D3.Content = "3№";
+            D4.Content = "4;";
+            D5.Content = "5%";
+            D6.Content = "6:";
+            D7.Content = "7?";
+            D8.Content = "8*";
+            D9.Content = "9 (";
+            D0.Content = "0 )";
+            OemMinus.Content = "-_";
+            OemPlus.Content = "=+";
+            OemQuestion.Content = ".,";
+        }
+
+        private void ButtonsLettersContent()
+        {
+            OemTilde.Content = "ё";
+            D1.Content = "1";
+            D2.Content = "2";
+            D3.Content = "3";
+            D4.Content = "4";
+            D5.Content = "5";
+            D6.Content = "6";
+            D7.Content = "7";
+            D8.Content = "8";
+            D9.Content = "9";
+            D0.Content = "0";
+            OemMinus.Content = "-";
+            OemPlus.Content = "=";
+            OemQuestion.Content = ".";
         }
 
         private string averageAccuracy()

@@ -57,6 +57,16 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
 
         private Dictionary<Key, string> EnglishToRussianLetters = new Dictionary<Key, string>
         {
+        {Key.D9, "(" },
+        {Key.D0, ")"},
+        {Key.Oem5, "\\" },
+        {Key.D1, "!" },
+        {Key.D2, "\"" },
+        {Key.OemQuestion, "." },
+        {Key.D6, ":" },
+        {Key.D7, "?" },
+        {Key.OemMinus, "-" },
+        {Key.D4, ";" },
         {Key.OemTilde, "ё" },
         {Key.OemOpenBrackets, "х" },
         {Key.OemCloseBrackets, "ъ" },
@@ -91,7 +101,8 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
         { Key.Y, "н" },
         { Key.Z, "я" },
         {Key.Space, " " },
-        {Key.Escape, "esc" }
+        {Key.Escape, "esc" },
+        {Key.LeftShift, "" }
         };
 
         private Dictionary<Key, string> KeyboardButtons = new Dictionary<Key, string>
@@ -158,9 +169,104 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
 
         private void ProgressTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
+            //MessageBox.Show($"{e.Key}");
+
             e.Handled = true;
 
             string key = EnglishToRussianLetters.ContainsKey(e.Key) ? EnglishToRussianLetters[e.Key] : null;
+
+            if (key != null && key.Any(char.IsPunctuation))
+            {
+                if (key != null && key.Any(char.IsPunctuation))
+                {
+                    if (Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.Oem5) && ProgressTextBox.Text[currentIndex] == '\\')
+                    {
+                        return;
+                    }
+
+                    if (Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.Oem5) && ProgressTextBox.Text[currentIndex] == '/')
+                    {
+                        key = "/";
+                    }
+
+                    if (Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.OemQuestion) && ProgressTextBox.Text[currentIndex] == '.')
+                    {
+                        return;
+                    }
+
+                    if (Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.OemQuestion) && ProgressTextBox.Text[currentIndex] == ',')
+                    {
+                        key = ",";
+                    }
+
+                    if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D9))
+                    {
+                        return;
+                    }
+
+                    if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D0))
+                    {
+                        return;
+                    }
+
+                    if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D1))
+                    {
+                        return;
+                    }
+
+                    if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D2))
+                    {
+                        return;
+                    }
+
+                    if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D4))
+                    {
+                        return;
+                    }
+
+                    if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D6))
+                    {
+                        return;
+                    }
+
+                    if (!Keyboard.IsKeyDown(Key.LeftShift) && (e.Key == Key.D7))
+                    {
+                        return;
+                    }
+                }
+            }
+
+            if (key != null && key.Any(char.IsLetter))
+            {
+                if (Keyboard.IsKeyDown(Key.LeftShift) && e.IsDown)
+                {
+                    key = key.ToUpper();
+                }
+            }
+
+            if (key != null && key.Any(char.IsLetter))
+            {
+                if (Keyboard.IsKeyDown(Key.LeftShift) && e.IsDown)
+                {
+                    key = key.ToUpper();
+                }
+            }
+
+            if (currentIndex + 1 < ProgressTextBox.Text.Length && char.IsPunctuation(ProgressTextBox.Text[currentIndex + 1]))
+            {
+                if (currentIndex == letters[currentLevel].Length - 1)
+                {
+                    return;
+                }
+                else
+                {
+                    ButtonsPunctuationContent();
+                }
+            }
+            else
+            {
+                ButtonsLettersContent();
+            }
 
             clicksCount++;
 
@@ -221,7 +327,7 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                         timer.Stop();
 
                         currentLevel = 0;
-                        D0.Background = brush;
+                        Q.Background = brush;
 
                         ProgressTextBox.Text = "Уровень пройден! (Пробел - Перепройти/ESC - Список уровней)";
                         progressBar.Value = progressBar.Maximum;
@@ -337,7 +443,42 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                 LeftAlt.Background = brush;
                 RightAlt.Background = brush;
             }
+        }
 
+        private void ButtonsPunctuationContent()
+        {
+            OemTilde.Content = "~Ё`";
+            D1.Content = "1 !";
+            D2.Content = "2\"";
+            D3.Content = "3№";
+            D4.Content = "4;";
+            D5.Content = "5%";
+            D6.Content = "6:";
+            D7.Content = "7?";
+            D8.Content = "8*";
+            D9.Content = "9 (";
+            D0.Content = "0 )";
+            OemMinus.Content = "-_";
+            OemPlus.Content = "=+";
+            OemQuestion.Content = ".,";
+        }
+
+        private void ButtonsLettersContent()
+        {
+            OemTilde.Content = "ё";
+            D1.Content = "1";
+            D2.Content = "2";
+            D3.Content = "3";
+            D4.Content = "4";
+            D5.Content = "5";
+            D6.Content = "6";
+            D7.Content = "7";
+            D8.Content = "8";
+            D9.Content = "9";
+            D0.Content = "0";
+            OemMinus.Content = "-";
+            OemPlus.Content = "=";
+            OemQuestion.Content = ".";
         }
 
         private string averageAccuracy()

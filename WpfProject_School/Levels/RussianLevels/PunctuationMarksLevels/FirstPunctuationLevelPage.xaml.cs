@@ -197,7 +197,7 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
                 }
             }
 
-            if (char.IsPunctuation(ProgressTextBox.Text[currentIndex + 1]))
+            if (currentIndex + 1 < ProgressTextBox.Text.Length && char.IsPunctuation(ProgressTextBox.Text[currentIndex + 1]))
             {
                 if (currentIndex == letters[currentLevel].Length - 1)
                 {
@@ -212,7 +212,7 @@ namespace WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels
             {
                 ButtonsLettersContent();
             }
-
+             
             clicksCount++;
 
             if (!isStarted)
