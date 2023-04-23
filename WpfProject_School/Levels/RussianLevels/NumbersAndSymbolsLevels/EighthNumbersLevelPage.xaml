@@ -5,10 +5,110 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfProject_School.Levels.RussianLevels.NumbersAndSymbolsLevels"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="920"
       Title="EighthNumbersLevelPage">
 
-    <Grid>
-        
-    </Grid>
+    <Border Background="#272537" CornerRadius="20">
+        <Grid PreviewKeyDown="ButtonPreview_Down" PreviewKeyUp="ButtonPreview_Up">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="920"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="TypeBoost" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White" FontSize="22" Margin="50,0,0,0">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <ProgressBar x:Name="progressBar" Height="10" Width="300" Minimum="0" Maximum="648" Value="0" Margin="195,82,425,-22" />
+            <TextBlock Text="Ваш прогресс:" FontSize="20" Foreground="White" Height="30" Margin="50,69,730,-29"/>
+            <TextBlock x:Name="timeBlock" FontSize="20" Text="Время: 00:00" Foreground="White" Margin="746,70,49,-31"/>
+            <TextBlock x:Name="tempTextBlock" Visibility="Hidden"/>
+            <TextBox x:Name="ProgressTextBox" TextWrapping="NoWrap" Padding="15,0,15,0" Text="Пробел - старт, ESC - Стоп/Выход" PreviewKeyDown="ProgressTextBox_PreviewKeyDown" PreviewMouseDown="ProgressTextBox_PreviewMouseDown" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="25" Background="White" IsReadOnly="True" IsReadOnlyCaretVisible="False" Margin="49,109,49,-108" Style="{StaticResource MaterialDesignTextBox}"/>
+            <StackPanel Margin="0,202,0,-520">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="8,0,0,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Border Height="377" Background="Gray" CornerRadius="10" Width="882">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,304">
+                            <Button x:Name="OemTilde" IsHitTestVisible="False" Content="ё" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D1" IsHitTestVisible="False" Content="1" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D2" IsHitTestVisible="False" Content="2" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D3" IsHitTestVisible="False" Content="3" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D4" IsHitTestVisible="False" Content="4" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D5" IsHitTestVisible="False" Content="5" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D6" IsHitTestVisible="False" Content="6" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D7" IsHitTestVisible="False" Content="7" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D8" IsHitTestVisible="False" Content="8" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D9" IsHitTestVisible="False" Content="9" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D0" IsHitTestVisible="False" Content="0" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="OemMinus" IsHitTestVisible="False" Content="-" FontSize="30" Width="50" Height="50"/>
+                            <Button x:Name="OemPlus" IsHitTestVisible="False" Content="=" FontSize="30" Width="50" Height="50"/>
+                            <Button x:Name="Back" IsHitTestVisible="False" Content="Backspace" FontSize="22" Width="111" Height="50"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,180" >
+                            <Button x:Name="Tab" IsHitTestVisible="False" Content="Tab" FontSize="25" Width="78" Height="50" />
+                            <Button x:Name="Q" IsHitTestVisible="False" Content="й" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="W" IsHitTestVisible="False" Content="ц" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="E" IsHitTestVisible="False" Content="у" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="R" IsHitTestVisible="False" Content="к" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="T" IsHitTestVisible="False" Content="е" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="Y" IsHitTestVisible="False" Content="н" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="U" IsHitTestVisible="False" Content="г" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="I" IsHitTestVisible="False" Content="ш" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="O" IsHitTestVisible="False" Content="щ" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="P" IsHitTestVisible="False" Content="з" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="OemOpenBrackets" IsHitTestVisible="False" Content="х" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="OemCloseBrackets" IsHitTestVisible="False" Content="ъ" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="Oem5" IsHitTestVisible="False" Content="\" FontSize="25" Width="83" Height="50"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,56" >
+                            <Button x:Name="CapsLock" IsHitTestVisible="False" Content="Caps Lock" FontSize="19" Width="93" Height="50" />
+                            <Button x:Name="A" IsHitTestVisible="False" Content="ф" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="S" IsHitTestVisible="False" Content="ы" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="D" IsHitTestVisible="False" Content="в" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="F" IsHitTestVisible="False" Content="а" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="G" IsHitTestVisible="False" Content="п" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="H" IsHitTestVisible="False" Content="р" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="J" IsHitTestVisible="False" Content="о" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="K" IsHitTestVisible="False" Content="л" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="L" IsHitTestVisible="False" Content="д" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="Oem1" IsHitTestVisible="False" Content="ж" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="OemQuotes" IsHitTestVisible="False" Content="э" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="Enter" IsHitTestVisible="False" Content="Enter" FontSize="25" Width="126" Height="50"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,-68" >
+                            <Button x:Name="LeftShift" IsHitTestVisible="False" Content="Shift" FontSize="25" Width="138" Height="50" />
+                            <Button x:Name="Z" IsHitTestVisible="False" Content="я" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="X" IsHitTestVisible="False" Content="ч" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="C" IsHitTestVisible="False" Content="с" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="V" IsHitTestVisible="False" Content="м" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="B" IsHitTestVisible="False" Content="и" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="N" IsHitTestVisible="False" Content="т" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="M" IsHitTestVisible="False" Content="ь" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="OemComma" IsHitTestVisible="False" Content="б" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="OemPeriod" IsHitTestVisible="False" Content="ю" FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="OemQuestion" IsHitTestVisible="False" Content="." FontSize="25" Width="50" Height="50"/>
+                            <Button x:Name="RightShift" IsHitTestVisible="False" Content="Shift" FontSize="25" Width="139" Height="50" />
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,-192" >
+                            <Button x:Name="LeftCtrl" IsHitTestVisible="False" Content="Ctrl" FontSize="25" Width="71" Height="50" />
+                            <Button x:Name="LWin" IsHitTestVisible="False" Content="Win" FontSize="25" Width="71" Height="50"/>
+                            <Button x:Name="LeftAlt" IsHitTestVisible="False" Content="Alt" FontSize="25" Width="71" Height="50"/>
+                            <Button x:Name="Space" IsHitTestVisible="False" Content="Space" FontSize="25" Width="365" Height="50"/>
+                            <Button x:Name="RightAlt" IsHitTestVisible="False" Content="Alt" FontSize="25" Width="71" Height="50"/>
+                            <Button x:Name="RWin" IsHitTestVisible="False" Content="Win" FontSize="25" Width="71" Height="50"/>
+                            <Button x:Name="RCtrl" IsHitTestVisible="False" Content="Ctrl" FontSize="25" Width="97" Height="50"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Page>

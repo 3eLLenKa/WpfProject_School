@@ -202,7 +202,7 @@ namespace WpfProject_School.Levels.RussianLevels.NumbersAndSymbolsLevels
                 }
             }
 
-            if (currentIndex + 1 < ProgressTextBox.Text.Length && char.IsPunctuation(ProgressTextBox.Text[currentIndex + 1]))
+            if (currentIndex + 1 < ProgressTextBox.Text.Length && (char.IsPunctuation(ProgressTextBox.Text[currentIndex + 1]) || char.IsSymbol(ProgressTextBox.Text[currentIndex + 1])))
             {
                 if (currentIndex == letters[currentLevel].Length - 1)
                 {
@@ -274,7 +274,7 @@ namespace WpfProject_School.Levels.RussianLevels.NumbersAndSymbolsLevels
 
                         isStarted = false;
 
-                        timer.Stop();
+                        timer.Stop(); 
 
                         currentLevel = 0;
                         Q.Background = brush;
