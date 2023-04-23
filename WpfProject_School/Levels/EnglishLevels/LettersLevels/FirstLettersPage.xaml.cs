@@ -41,6 +41,8 @@ namespace WpfProject_School.Levels.EnglishLevels.LettersLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
+        private string key;
+
         private string[] letters = { " dddjjj ddjdj jddjj djdjd jjdjd jd ddj djddj jdjdj",
                                      " ddjd jddj djd jdj jjd fffjjj ffjfj jffjj fjfjf",
                                      " jjfjf jdf fdj fjffj jfjfj jdjf dfj fjfj dfjd jdff",
@@ -124,6 +126,12 @@ namespace WpfProject_School.Levels.EnglishLevels.LettersLevels
 
             clicksCount++;
 
+            if (e.Key == Key.Space)
+            {
+                key = " ";
+            }
+            else key = null;
+
             if (!isStarted)
             {
                 if (e.Key == Key.Space)
@@ -158,10 +166,11 @@ namespace WpfProject_School.Levels.EnglishLevels.LettersLevels
                     }
                 }
             }
+
             else
             {
-                if (e.Key.ToString().ToLower() == ProgressTextBox.Text[currentIndex].ToString())
-                {
+                if (e.Key.ToString().ToLower() == ProgressTextBox.Text[currentIndex].ToString() | ProgressTextBox.Text[currentIndex].ToString() == key)
+                {  
                     correctCount++;
 
                     if (currentIndex == letters[currentLevel].Length - 1)
@@ -297,43 +306,6 @@ namespace WpfProject_School.Levels.EnglishLevels.LettersLevels
                 RightAlt.Background = brush;
             }
         }
-
-        private void ButtonsPunctuationContent()
-        {
-            OemTilde.Content = "~Ё`";
-            D1.Content = "1 !";
-            D2.Content = "2\"";
-            D3.Content = "3№";
-            D4.Content = "4;";
-            D5.Content = "5%";
-            D6.Content = "6:";
-            D7.Content = "7?";
-            D8.Content = "8*";
-            D9.Content = "9 (";
-            D0.Content = "0 )";
-            OemMinus.Content = "-_";
-            OemPlus.Content = "=+";
-            OemQuestion.Content = ".,";
-        }
-
-        private void ButtonsLettersContent()
-        {
-            OemTilde.Content = "ё";
-            D1.Content = "1";
-            D2.Content = "2";
-            D3.Content = "3";
-            D4.Content = "4";
-            D5.Content = "5";
-            D6.Content = "6";
-            D7.Content = "7";
-            D8.Content = "8";
-            D9.Content = "9";
-            D0.Content = "0";
-            OemMinus.Content = "-";
-            OemPlus.Content = "=";
-            OemQuestion.Content = ".";
-        }
-
         private string averageAccuracy()
         {
             string accuracy = Math.Round(correctCount / clicksCount * 100).ToString() + "%";
