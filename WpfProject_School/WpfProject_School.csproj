@@ -70,6 +70,18 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataBase.cs" />
+    <Compile Include="InfoPages\FirstInfoPage.xaml.cs">
+      <DependentUpon>FirstInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InfoPages\FourthInfoPage.xaml.cs">
+      <DependentUpon>FourthInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InfoPages\SecondInfoPages.xaml.cs">
+      <DependentUpon>SecondInfoPages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InfoPages\ThirdInfoPage.xaml.cs">
+      <DependentUpon>ThirdInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="LevelsPage.xaml.cs">
       <DependentUpon>LevelsPage.xaml</DependentUpon>
     </Compile>
@@ -231,6 +243,22 @@
       <DependentUpon>UIPage.xaml</DependentUpon>
     </Compile>
     <Page Include="AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InfoPages\FirstInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InfoPages\FourthInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InfoPages\SecondInfoPages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InfoPages\ThirdInfoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -508,9 +536,7 @@
   <ItemGroup>
     <Resource Include="Images\background.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="InfoPages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.7.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.7.1\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,0 +1,62 @@
+﻿<Page x:Class="WpfProject_School.InfoPages.SecondInfoPages"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfProject_School.InfoPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="920"
+      Title="SecondInfoPages">
+
+    <Border Background="#272537" CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Click="GoBack" Style="{StaticResource MaterialDesignFlatButton}" Foreground="White" Content="Вернуться назад" Margin="0,19,0,-87"/>
+            <TextBlock Text="TypeBoost" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="22">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="Десятипальцевый метод" FontSize="20" FontWeight="DemiBold" Foreground="White" Width="721"/>
+                <ScrollViewer Height="477" Margin="0,15,0,0" VerticalScrollBarVisibility="Auto">
+                    <WrapPanel HorizontalAlignment="Left">
+                        <StackPanel Width="700" Height="649">
+
+                            <Grid HorizontalAlignment="Left" Width="690" Height="777">
+                                <TextBlock TextAlignment="Justify" FontSize="17" Foreground="White" TextWrapping="Wrap">
+                                    Слепой метод печати (американский слепой десятипальцевый метод набора) – ввод текста на клавиатуре или пишущей машинке, при котором человек не смотрит на клавиши и печатает десятью пальцами.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    Научиться печатать быстро и без ошибок можно только при строгом распределении клавиш клавиатуры между всеми десятью пальцами. В русской раскладке, изначально пальцы (кроме больших) располагаются в позиции "Ф Ы В А" и "О Л Д Ж", а в английской — "A S D F" и "J K L :".
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    Клавиатура компьютера спроектирована таким образом, что позволяет выполнять все необходимые операции: печатать, редактировать и форматировать текст без использования мыши. Что даже быстрее, при наличии некоторой практики.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    <Run FontWeight="Bold" Text="Совет:"/> <Run Text="Постарайтесь не нажимать на клавиши не теми пальцами, впоследствии это может сильно снизить вашу скорость печати, хотя, возможно, поначалу вам покажется, что так проще." FontStyle="Italic"/>
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    При выполнении упражнений следует добиваться полного автоматизма, когда вы печатаете лишь механически, нажимая клавиши в нужной последовательности не задумываясь о их расположении на клавиатуре.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    <Run FontWeight="Bold" Text="Совет:"/> <Run Text="Для более эффективного изучения десятипальцевого метода нужно заниматься ежедневно." FontStyle="Italic"/>
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    Практический курс обучения основан на ряде упражнений, выполнение которых сводится к набору специальным образом подобранного текста. Переходите от одного упражнения к другому только после выполнения требований к качеству печати.
+                                </TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </WrapPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

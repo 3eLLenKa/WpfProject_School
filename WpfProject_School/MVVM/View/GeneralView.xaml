@@ -64,7 +64,7 @@
             <StackPanel>
                 <TextBlock Text="Дополнительная информация" Foreground="White" FontSize="28" HorizontalAlignment="Left" Margin="0,0,0,10"/>
                 <StackPanel Orientation="Horizontal">
-                    <Button Width="150" Height="150" Background="#844eff" BorderThickness="0" Padding="0" Margin="0">
+                    <Button Click="GoToFirstInfoPage" Width="150" Height="150" Background="#844eff" BorderThickness="0" Padding="0" Margin="0">
                         <StackPanel Height="147">
                             <TextBlock Text="Методы слепой&#10;печати" HorizontalAlignment="Left" FontSize="16" Margin="20,10,10,0" Foreground="White" Height="60" Width="120"/>
                         </StackPanel>
@@ -72,7 +72,7 @@
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
                         </Button.Clip>
                     </Button>
-                    <Button Width="150" Height="150" Background="#4e99ff" BorderThickness="0" Padding="0" Margin="15,0,0,0">
+                    <Button Click="GoToSecondInfoPage" Width="150" Height="150" Background="#4e99ff" BorderThickness="0" Padding="0" Margin="15,0,0,0">
                         <StackPanel Height="147">
                             <TextBlock Text="Десяти-&#10;пальцевый&#10;метод" HorizontalAlignment="Left" FontSize="16" Margin="20,10,10,0" Foreground="White" Height="73" Width="120"/>
                         </StackPanel>
@@ -80,7 +80,7 @@
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
                         </Button.Clip>
                     </Button>
-                    <Button Width="150" Height="150" Background="#4eff91" BorderThickness="0" Padding="0" Margin="15,0,0,0">
+                    <Button Click="GoToThirdInfoPage" Width="150" Height="150" Background="#4eff91" BorderThickness="0" Padding="0" Margin="15,0,0,0">
                         <StackPanel Height="147">
                             <TextBlock Text="Расположение&#10;пальцев" HorizontalAlignment="Left" FontSize="16" Margin="20,10,10,0" Foreground="White" Height="70" Width="120"/>
                         </StackPanel>
@@ -88,7 +88,7 @@
                             <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
                         </Button.Clip>
                     </Button>
-                    <Button Width="150" Height="150" Background="Pink" BorderThickness="0" Padding="0" Margin="15,0,0,0">
+                    <Button Click="GoToFourthInfoPage" Width="150" Height="150" Background="Pink" BorderThickness="0" Padding="0" Margin="15,0,0,0">
                         <StackPanel Height="147">
                             <TextBlock Text="Посадка и&#10;положение рук" HorizontalAlignment="Left" FontSize="16" Margin="20,10,10,0" Foreground="White" Height="70" Width="120"/>
                         </StackPanel>

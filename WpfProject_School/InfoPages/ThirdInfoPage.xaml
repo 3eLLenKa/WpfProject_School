@@ -1,0 +1,102 @@
+﻿<Page x:Class="WpfProject_School.InfoPages.ThirdInfoPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfProject_School.InfoPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="920"
+      Title="ThirdInfoPage">
+
+    <Border Background="#272537" CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Click="GoBack" Style="{StaticResource MaterialDesignFlatButton}" Foreground="White" Content="Вернуться назад" Margin="0,19,0,-87"/>
+            <TextBlock Text="TypeBoost" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="22">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <StackPanel Grid.Row="1" Grid.Column="1">
+                <TextBlock Text="Расположение пальцев" FontSize="20" FontWeight="DemiBold" Foreground="White" Width="721"/>
+                <ScrollViewer Height="477" Margin="0,15,0,0" VerticalScrollBarVisibility="Auto">
+                    <WrapPanel HorizontalAlignment="Left">
+                        <StackPanel Width="700" Height="1012">
+                            <Grid HorizontalAlignment="Left" Width="690" Height="977">
+                                <TextBlock TextAlignment="Justify" FontSize="17" Foreground="White" TextWrapping="Wrap">
+                                    Все компьютеры, независимо от операционной системы и марки, имеют стандартную клавиатуру с буквами алфавита, цифрами и знаками. Клавиатура состоит из четырех рядов: верхний ряд — цифры и специальные знаки, на остальных расположены буквы и знаки препинания. В центре клавиатуры размещены клавиши с буквами, наиболее часто повторяющимися в текстах; их нажимают более развитые и подвижные пальцы: указательные и средние.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    Ряды клавиатуры располагаются снизу вверх: 1-й ряд называется нижним, 2-й — основным, 3-й — верхним, 4-й — цифровым.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    Изучение клавиатуры начинают со второго ряда. Этот ряд получил название основного, поскольку на нем расположены буквы алфавита, наиболее часто повторяющиеся в текстах. С этого ряда, расположенного в центре клавиатуры, удобно перемещать пальцы для нажатия других клавиш.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    Пальцы на клавишах основного ряда распределяются следующим образом:
+                                    <LineBreak/>
+                                    ● левая рука: мизинец — ф, безымянный — ы, средний — в, указательный — а;
+                                    <LineBreak/>
+                                    ● правая рука: указательный — о, средний — л, безымянный — д, мизинец — ж.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    Такое расположение пальцев называют «основной позицией».
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    Остальные символы набираются так же — каждый своим пальцем.
+                                    При этом палец перемещается в нужную позицию, нажимает клавишу и возвращается в исходную позицию.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    Клавиши распределяются следующим образом:
+                                    <LineBreak/>
+                                    ● к левому указательному пальцу — а, п, к, е, м, и;
+                                    <LineBreak/>
+                                    ● к правому указательному — о, р, н, г, т, ь;
+                                    <LineBreak/>
+                                    ● к левому среднему — у, в, с;
+                                    <LineBreak/>
+                                    ● к правому среднему — ш, л, б;
+                                    <LineBreak/>
+                                    ● к левому безымянному — ц, ы, ч;
+                                    <LineBreak/>
+                                    ● к правому безымянному — щ, д, ю;
+                                    <LineBreak/>
+                                    ● к левому мизинцу — й, ф, я;
+                                    <LineBreak/>
+                                    ● к правому мизинцу — з, ж, э, х, ъ.
+                                    <LineBreak/>
+                                    ● Большими пальцами обеих рук нажимают на клавишу пробела.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    На рисунке ниже приведена схема русской клавиатуры. Она дает представление о зонах движения пальцев при слепом методе набора текста.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    На начальном этапе обучение слепому десятипальцевому методу печати проводится без учета регистра. Прописные буквы, знаки препинания, цифры, вспомогательные символы — это уже следующий этап, к которому можно переходить, овладев навыком слепой десятипальцевой печати в нижнем регистре (строчными буквами). Практика показывает, что их изучение занимает не более 5-10% времени, потраченного на изучение нижнего регистра клавиатуры.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    Прежде чем приступить к освоению набора текстов, обратите внимание на следующие клавиши: Backspace, Delete, Enter, Space.
+                                    <LineBreak/>
+                                    <LineBreak/>
+                                    ● Клавиша Backspace используется для удаления символа, находящегося слева от курсора. Она предназначена для исправления ошибок, которые возникают при наборе текста.
+                                    <LineBreak/>
+                                    ● Действие клавиши Delete напоминает действие клавиши Backspace. Она служит для удаления символа, находящегося справа от курсора.
+                                    <LineBreak/>
+                                    ● Клавиша Enter используется для перевода строк.
+                                    <LineBreak/>
+                                    ● Клавишу Space нажимают большим пальцем левой или правой (свободной в данный момент) руки. Она предназначена для проставления пробелов между словами в предложении.
+                                </TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </WrapPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>
