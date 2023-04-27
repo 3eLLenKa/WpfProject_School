@@ -22,7 +22,7 @@
 
             <ScrollViewer Height="425" Margin="0,15,0,0" VerticalScrollBarVisibility="Auto" Cursor="">
                 <WrapPanel HorizontalAlignment="Left">
-                    <StackPanel>
+                    <StackPanel Height="1102">
                         <TextBlock Foreground="White" FontSize="20" HorizontalAlignment="Left" Text="Базовые уроки" Margin="15" Height="29" Width="146"/>
                         <UniformGrid Rows="2" Columns="4">
                             <Button Click="FirstLettersPageNavigation" Content="df jk" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#844eff">
