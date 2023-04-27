@@ -29,19 +29,19 @@ namespace WpfProject_School.MVVM.View
 
         private void LeaveAccount(object sender, RoutedEventArgs e)
         {
-            if (File.Exists(@"C:\Logs\currentUser.json"))
-            {
-                var loginInfo = new { Login = "", IsLoggedIn = false };
-                string loginJson = JsonConvert.SerializeObject(loginInfo);
+            //if (File.Exists(@"C:\Logs\currentUser.json"))
+            //{
+            //    var loginInfo = new { Login = "", IsLoggedIn = false };
+            //    string loginJson = JsonConvert.SerializeObject(loginInfo);
 
-                using (StreamWriter sw = File.CreateText(@"C:\Logs\currentUser.json"))
-                {
-                    sw.Write(loginJson);
-                }
+            //    using (StreamWriter sw = File.CreateText(@"C:\Logs\currentUser.json"))
+            //    {
+            //        sw.Write(loginJson);
+            //    }
 
-                var mainFrame = (Window.GetWindow(this)?.FindName("MainFrame") as Frame);
-                mainFrame?.Navigate(new AuthPage());
-            }
+            //    var mainFrame = (Window.GetWindow(this)?.FindName("MainFrame") as Frame);
+            //    mainFrame?.Navigate(new AuthPage());
+            //}
         }
     }
 }

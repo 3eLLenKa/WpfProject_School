@@ -133,13 +133,9 @@ namespace WpfProject_School.Levels.EnglishLevels.WordsLevels
             }
             //else key = null;
 
-            if (char.IsUpper(ProgressTextBox.Text[currentIndex]))
+            if (Keyboard.IsKeyDown(Key.LeftShift) & char.IsLetter(ProgressTextBox.Text[currentIndex]))
             {
-                if (Keyboard.IsKeyDown(Key.LeftShift) & e.IsDown)
-                {
-                    key = key.ToUpper();
-                }
-                else return;
+                key = key.ToUpper();
             }
 
             if (!isStarted)
@@ -179,7 +175,7 @@ namespace WpfProject_School.Levels.EnglishLevels.WordsLevels
 
             else
             {
-                if (key == " ")
+                if (key == ProgressTextBox.Text[currentIndex].ToString())
                 {
                     correctCount++;
 

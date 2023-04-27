@@ -41,6 +41,8 @@ namespace WpfProject_School.Levels.EnglishLevels.PunctuationMarksLevels
         private int secondsElapsed;
         private int minutesElapsed;
 
+        private string key;
+
         private string[] letters = { " ,,,;;; ,,;,; ;,,;; ,;,;, ;;,;, advise, sort;",
                                      " ,;,,; ;,;,; Harsh, formal, chef; recall,",
                                      " track; ...;;; ..;.; ;..;; .;.;. ;;.;. moral;",
@@ -55,29 +57,6 @@ namespace WpfProject_School.Levels.EnglishLevels.PunctuationMarksLevels
                                      " broad: below; agenda; .;.,: ;,::. ;.;:, ,;..:",
                                      " ,:,.; :.;;, :,:;. .:,,; Cat: poor, wide;",
                                      " lawyer, proud. Urge: notion, area; expand, hand." };
-
-
-        private Dictionary<Key, string> PunctuationMarks = new Dictionary<Key, string>
-        {
-            {Key.D1, "!" },
-            {Key.D2, "@"},
-            {Key.D3, "#"},
-            {Key.D4, "$"},
-            {Key.D5, "%"},
-            {Key.D6, "^"},
-            {Key.D7, "&"},
-            {Key.D8, "*"},
-            {Key.D9, "("},
-            {Key.D0, ")"},
-            {Key.OemMinus, "-" },
-            {Key.OemPlus, "="},
-            {Key.OemQuotes, "'"},
-            {Key.Oem1, ";"},
-            {Key.OemComma, ","},
-            {Key.OemPeriod, "."},
-            {Key.OemQuestion, "/"},
-            {Key.Oem5, "\\" }
-        };
 
 
         private Dictionary<Key, string> KeyboardButtons = new Dictionary<Key, string>
@@ -144,102 +123,39 @@ namespace WpfProject_School.Levels.EnglishLevels.PunctuationMarksLevels
 
         private void ProgressTextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            MessageBox.Show($"{e.Key}");
+            //MessageBox.Show($"{e.Key}");
 
             e.Handled = true;
 
+            key = e.Key.ToString().ToLower();
+
             clicksCount++;
 
-            string key = e.Key.ToString().ToLower();
-            string punctuation = PunctuationMarks[e.Key];
-
-            if (punctuation != null)
+            if (!(Keyboard.IsKeyDown(Key.LeftShift)) & e.Key == Key.OemComma)
             {
-                if (Keyboard.IsKeyDown(Key.LeftShift))
-                {
-                    switch (e.Key)
-                    {
-                        case Key.OemMinus:
-                            if (ProgressTextBox.Text[currentIndex] == '-') return;
-                            if (ProgressTextBox.Text[currentIndex] == '_') punctuation = "_";
-                            break;
-                        case Key.D1:
-                            if (ProgressTextBox.Text[currentIndex] == '1') return;
-                            if (ProgressTextBox.Text[currentIndex] == '!') punctuation = "!";
-                            break;
-                        case Key.OemPlus:
-                            if (ProgressTextBox.Text[currentIndex] == '=') return;
-                            if (ProgressTextBox.Text[currentIndex] == '+') punctuation = "+";
-                            break;
-                        case Key.D8:
-                            if (ProgressTextBox.Text[currentIndex] == '8') return;
-                            if (ProgressTextBox.Text[currentIndex] == '*') punctuation = "*";
-                            break;
-                        case Key.D9:
-                            if (ProgressTextBox.Text[currentIndex] == '9') return;
-                            if (ProgressTextBox.Text[currentIndex] == '(') punctuation = "(";
-                            break;
-                        case Key.D4:
-                            if (ProgressTextBox.Text[currentIndex] == '4') return;
-                            if (ProgressTextBox.Text[currentIndex] == ';') punctuation = ";";
-                            break;
-                        case Key.D0:
-                            if (ProgressTextBox.Text[currentIndex] == '0') return;
-                            if (ProgressTextBox.Text[currentIndex] == ')') punctuation = ")";
-                            break;
-                        case Key.D7:
-                            if (ProgressTextBox.Text[currentIndex] == '7') return;
-                            if (ProgressTextBox.Text[currentIndex] == '?') punctuation = "?";
-                            break;
-                        case Key.D2:
-                            if (ProgressTextBox.Text[currentIndex] == '2') return;
-                            if (ProgressTextBox.Text[currentIndex] == '\"') punctuation = "\"";
-                            break;
-                        case Key.D6:
-                            if (ProgressTextBox.Text[currentIndex] == '6') return;
-                            if (ProgressTextBox.Text[currentIndex] == ':') punctuation = ":";
-                            break;
-                        case Key.D3:
-                            if (ProgressTextBox.Text[currentIndex] == '3') return;
-                            if (ProgressTextBox.Text[currentIndex] == '№') punctuation = "№";
-                            break;
-                        case Key.D5:
-                            if (ProgressTextBox.Text[currentIndex] == '5') return;
-                            if (ProgressTextBox.Text[currentIndex] == '%') punctuation = "%";
-                            break;
-                    }
-                }
+                key = ",";
             }
+            if (!(Keyboard.IsKeyDown(Key.LeftShift)) & e.Key == Key.Oem1)
+            {
+                key = ";";
+            }
+            if (!(Keyboard.IsKeyDown(Key.LeftShift)) & e.Key == Key.OemPeriod)
+            {
+                key = ".";
+            }
+            if ((Keyboard.IsKeyDown(Key.LeftShift)) & e.Key == Key.Oem1)
+            {
+                key = ":";
+            }
+            if ((Keyboard.IsKeyDown(Key.LeftShift)) & char.IsLetter(ProgressTextBox.Text[currentIndex]))
+            {
+                key = key.ToUpper();
+            }
+
 
             if (e.Key == Key.Space)
             {
                 key = " ";
-            }
-            //else key = null;
-
-            if (char.IsUpper(ProgressTextBox.Text[currentIndex]))
-            {
-                if (Keyboard.IsKeyDown(Key.LeftShift) & e.IsDown)
-                {
-                    key = key.ToUpper();
-                }
-                else return;
-            }
-
-            if (currentIndex + 1 < ProgressTextBox.Text.Length && char.IsPunctuation(ProgressTextBox.Text[currentIndex + 1]))
-            {
-                if (currentIndex == letters[currentLevel].Length - 1)
-                {
-                    return;
-                }
-                else
-                {
-                    ButtonsPunctuationContent();
-                }
-            }
-            else
-            {
-                ButtonsLettersContent();
             }
 
             if (!isStarted)
@@ -279,7 +195,7 @@ namespace WpfProject_School.Levels.EnglishLevels.PunctuationMarksLevels
 
             else
             {
-                if (key == " ")
+                if (key == ProgressTextBox.Text[currentIndex].ToString())
                 {
                     correctCount++;
 
@@ -342,6 +258,7 @@ namespace WpfProject_School.Levels.EnglishLevels.PunctuationMarksLevels
                 }
             }
         }
+
         private void StartTimer()
         {
             timer = new DispatcherTimer();
@@ -349,6 +266,7 @@ namespace WpfProject_School.Levels.EnglishLevels.PunctuationMarksLevels
             timer.Tick += Timer_Tick;
             timer.Start();
         }
+
         private void WindowSettings()
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
@@ -415,41 +333,6 @@ namespace WpfProject_School.Levels.EnglishLevels.PunctuationMarksLevels
             }
         }
 
-        private void ButtonsPunctuationContent()
-        {
-            OemTilde.Content = "~Ё`";
-            D1.Content = "1 !";
-            D2.Content = "2\"";
-            D3.Content = "3№";
-            D4.Content = "4;";
-            D5.Content = "5%";
-            D6.Content = "6:";
-            D7.Content = "7?";
-            D8.Content = "8*";
-            D9.Content = "9 (";
-            D0.Content = "0 )";
-            OemMinus.Content = "-_";
-            OemPlus.Content = "=+";
-            OemQuestion.Content = ".,";
-        }
-
-        private void ButtonsLettersContent()
-        {
-            OemTilde.Content = "ё";
-            D1.Content = "1";
-            D2.Content = "2";
-            D3.Content = "3";
-            D4.Content = "4";
-            D5.Content = "5";
-            D6.Content = "6";
-            D7.Content = "7";
-            D8.Content = "8";
-            D9.Content = "9";
-            D0.Content = "0";
-            OemMinus.Content = "-";
-            OemPlus.Content = "=";
-            OemQuestion.Content = ".";
-        }
         private string averageAccuracy()
         {
             string accuracy = Math.Round(correctCount / clicksCount * 100).ToString() + "%";

@@ -43,7 +43,17 @@ namespace WpfProject_School.Levels.EnglishLevels.LettersLevels
 
         private string key;
 
-        private string[] letters = { "" };
+        private string[] letters = { " aaalll aalal laall alala llala dad all alaal lalal",
+                                     " fall add fall add dad ssslll sslsl lssll slsls",
+                                     " llsls fall sad slssl lslsl sad salad salad ask all",
+                                     " ask ;;;sss ;;s;s s;;ss ;s;s; ss;s; sad; salad;",
+                                     " ;s;;s s;s;s ask; salad; sad; ask; salad; aaa;;;",
+                                     " aa;a; ;aa;; a;a;a ;;a;a all; fall; a;aa; ;a;a; add;",
+                                     " all; ask; dad; fall; sad; aaasss ssasa assaa salad",
+                                     " ask sasas aasas dad add all sad dad lll;;; ll;l;",
+                                     " ;ll;; fall; all; l;l;l ;;l;l all; fall; salad; fall;",
+                                     " all; slsa; la;;s lsl;a alss; a;asl ;slla ;a;ls s;aal",
+                                     " sad salad; add dad; fall all ask; dad; sad all;" };
 
 
         private Dictionary<Key, string> KeyboardButtons = new Dictionary<Key, string>
@@ -114,7 +124,14 @@ namespace WpfProject_School.Levels.EnglishLevels.LettersLevels
 
             e.Handled = true;
 
+            key = e.Key.ToString().ToLower();
+
             clicksCount++;
+
+            if (!(Keyboard.IsKeyDown(Key.LeftShift)) & e.Key == Key.Oem1)
+            {
+                key = ";";
+            }
 
             if (e.Key == Key.Space)
             {
@@ -158,7 +175,7 @@ namespace WpfProject_School.Levels.EnglishLevels.LettersLevels
 
             else
             {
-                if (e.Key.ToString().ToLower() == ProgressTextBox.Text[currentIndex].ToString() | ProgressTextBox.Text[currentIndex].ToString() == key)
+                if (key == ProgressTextBox.Text[currentIndex].ToString())
                 {
                     correctCount++;
 
@@ -294,42 +311,6 @@ namespace WpfProject_School.Levels.EnglishLevels.LettersLevels
                 LeftAlt.Background = brush;
                 RightAlt.Background = brush;
             }
-        }
-
-        private void ButtonsPunctuationContent()
-        {
-            OemTilde.Content = "~Ё`";
-            D1.Content = "1 !";
-            D2.Content = "2\"";
-            D3.Content = "3№";
-            D4.Content = "4;";
-            D5.Content = "5%";
-            D6.Content = "6:";
-            D7.Content = "7?";
-            D8.Content = "8*";
-            D9.Content = "9 (";
-            D0.Content = "0 )";
-            OemMinus.Content = "-_";
-            OemPlus.Content = "=+";
-            OemQuestion.Content = ".,";
-        }
-
-        private void ButtonsLettersContent()
-        {
-            OemTilde.Content = "ё";
-            D1.Content = "1";
-            D2.Content = "2";
-            D3.Content = "3";
-            D4.Content = "4";
-            D5.Content = "5";
-            D6.Content = "6";
-            D7.Content = "7";
-            D8.Content = "8";
-            D9.Content = "9";
-            D0.Content = "0";
-            OemMinus.Content = "-";
-            OemPlus.Content = "=";
-            OemQuestion.Content = ".";
         }
 
         private string averageAccuracy()

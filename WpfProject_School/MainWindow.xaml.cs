@@ -29,8 +29,6 @@ namespace WpfProject_School
     {
         public static MainWindow window;
 
-        private static FirstLettersLevelPage lettersPage = new FirstLettersLevelPage();
-
         public MainWindow()
         {
             window = this;
@@ -38,8 +36,8 @@ namespace WpfProject_School
             try
             {
                 InitializeComponent();
-                MainFrame.Content = new AuthPage();
-                LoadLoginInfo();
+                MainFrame.Content = new UIPage();
+                //LoadLoginInfo();
             }
             catch (Exception ex)
             {
@@ -56,20 +54,20 @@ namespace WpfProject_School
             }
         }
 
-        private void LoadLoginInfo()
-        {
-            if (File.Exists(@"C:\Logs\currentUser.json"))
-            {
-                string loginJson = File.ReadAllText(@"C:\Logs\currentUser.json");
-                dynamic loginInfo = JsonConvert.DeserializeObject(loginJson);
+        //private void LoadLoginInfo()
+        //{
+        //    if (File.Exists(@"C:\Logs\currentUser.json"))
+        //    {
+        //        string loginJson = File.ReadAllText(@"C:\Logs\currentUser.json");
+        //        dynamic loginInfo = JsonConvert.DeserializeObject(loginJson);
 
-                if ((bool)loginInfo.IsLoggedIn)
-                {
-                    MainFrame.Content = new UIPage();
-                }
-                //else throw new Exception("Error Ocured: Account is not autorized.");
-            }
-        }
+        //        if ((bool)loginInfo.IsLoggedIn)
+        //        {
+        //            MainFrame.Content = new UIPage();
+        //        }
+        //        //else throw new Exception("Error Ocured: Account is not autorized.");
+        //    }
+        //}
 
         private void CloseClient(object sender, EventArgs e)
         {
