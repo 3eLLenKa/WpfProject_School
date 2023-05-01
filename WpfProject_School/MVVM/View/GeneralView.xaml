@@ -41,10 +41,10 @@
                         </Image>
                     </Grid>
                 </Button>
-                <Button Width="204" Height="200" BorderThickness="0" Padding="0" Margin="44,0,0,0">
+                <Button Click="GoToGoogleForm" Width="204" Height="200" BorderThickness="0" Padding="0" Margin="44,0,0,0">
                     <Grid>
-                        <StackPanel Margin="0,-16,0,79">
-                            <TextBlock Text="Ваш профиль" HorizontalAlignment="Left" FontSize="25" Margin="20,10,10,0" Foreground="White" Height="40" Width="177"/>
+                        <StackPanel Margin="0,-16,0,44">
+                            <TextBlock Text="Предложить&#10;идею" HorizontalAlignment="Left" FontSize="25" Margin="20,10,10,0" Foreground="White" Height="70" Width="177"/>
                             <TextBlock Text="Перейти" FontSize="14" HorizontalAlignment="Left" Margin="20,10,10,0" Foreground="White" Width="142" Height="26"/>
 
                         </StackPanel>

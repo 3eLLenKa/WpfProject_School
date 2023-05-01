@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,11 @@ namespace WpfProject_School.MVVM.View
         private void GoToFourthInfoPage(object sender, RoutedEventArgs e)
         {
             NavigationService.GetNavigationService(this).Navigate(new FourthInfoPage());
+        }
+
+        private void GoToGoogleForm(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://docs.google.com/forms/d/e/1FAIpQLSeaKKJjS1RfcXS1ZGNDoHyo0N2L3qezTdVxsZqpLtg-XKxkXg/viewform?usp=sf_link");
         }
     }
 }

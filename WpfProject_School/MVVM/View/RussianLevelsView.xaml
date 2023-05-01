@@ -19,7 +19,7 @@
         </StackPanel>
         <StackPanel>
 
-            <ScrollViewer Height="425" Margin="0,15,0,0" VerticalScrollBarVisibility="Auto">
+            <ScrollViewer Height="425" Margin="0,15,0,0" VerticalScrollBarVisibility="Auto" Style="{StaticResource MaterialDesignScrollViewer}">
                 <WrapPanel HorizontalAlignment="Left">
                     <StackPanel>
                         <TextBlock Foreground="White" FontSize="20" HorizontalAlignment="Left" Text="Базовые уроки" Margin="15" Height="29" Width="146"/>
@@ -39,7 +39,7 @@
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
                                 </Button.Clip>
                             </Button>
-                            <Button Click="FourthLettersPageNavigation" Content="еп нр" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                            <Button Click="FourthLettersPageNavigation" Content="еп нр" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="Pink">
                                 <Button.Clip>
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
                                 </Button.Clip>
@@ -59,7 +59,7 @@
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
                                 </Button.Clip>
                             </Button>
-                            <Button Click="EighthLettersPageNavigation" Content="я эхъ" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                            <Button Click="EighthLettersPageNavigation" Content="я эхъ" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="Pink">
                                 <Button.Clip>
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
                                 </Button.Clip>
@@ -82,7 +82,7 @@
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
                                 </Button.Clip>
                             </Button>
-                            <Button Click="FourthWordsPageNavigation" Content="Прописные&#10;буквы" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                            <Button Click="FourthWordsPageNavigation" Content="Прописные&#10;буквы" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="Pink">
                                 <Button.Clip>
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
                                 </Button.Clip>
@@ -105,7 +105,7 @@
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
                                 </Button.Clip>
                             </Button>
-                            <Button Click="FourthPunctuationPageNavigation" Content="Всё вместе" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                            <Button Click="FourthPunctuationPageNavigation" Content="Всё вместе" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="Pink">
                                 <Button.Clip>
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
                                 </Button.Clip>
@@ -128,7 +128,7 @@
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
                                 </Button.Clip>
                             </Button>
-                            <Button Click="FourthNumbersPageNavigation" Content="Числа 1-99" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                            <Button Click="FourthNumbersPageNavigation" Content="Числа 1-99" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="Pink">
                                 <Button.Clip>
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
                                 </Button.Clip>
@@ -148,7 +148,7 @@
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,153"/>
                                 </Button.Clip>
                             </Button>
-                            <Button Click="EighthNumbersPageNavigation" Content="Всё вместе" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="#ecff4e">
+                            <Button Click="EighthNumbersPageNavigation" Content="Всё вместе" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Foreground="White" FontSize="20" Width="150" Height="150" Background="Pink">
                                 <Button.Clip>
                                     <RectangleGeometry RadiusX="10" RadiusY="10" Rect="0,0,150,150"/>
                                 </Button.Clip>

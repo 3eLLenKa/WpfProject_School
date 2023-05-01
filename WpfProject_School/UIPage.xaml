@@ -31,9 +31,8 @@
                 </TextBlock>
 
                 <StackPanel Grid.Row="1">
-                    <RadioButton Content="Главная" Height="50" FontSize="15" Foreground="White" IsChecked="True" Command="{Binding GeneralViewCommand}" Style="{StaticResource MenuButtonStyle}"/>
-                    <RadioButton Content="Настройки" Height="50" FontSize="15" Foreground="White" Command="{Binding SettingsViewCommand}" Style="{StaticResource MenuButtonStyle}"/>
-                </StackPanel>
+                <RadioButton Content="Главная" Height="50" FontSize="15" Foreground="White" IsChecked="True" Command="{Binding GeneralViewCommand}" Style="{StaticResource MenuButtonStyle}"/>
+            </StackPanel>
                 <ContentControl Grid.Row="1" Grid.Column="1" Margin="10" Content="{Binding CurrentView}"/>
             </Grid>
         </Border>
