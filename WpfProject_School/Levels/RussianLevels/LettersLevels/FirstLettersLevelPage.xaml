@@ -10,7 +10,7 @@
       Title="FirstLettersLevelPage">
 
     <Border Background="#272537" CornerRadius="20">
-        <Grid PreviewKeyDown="ButtonPreview_Down" PreviewKeyUp="ButtonPreview_Up"> 
+        <Grid x:Name="grid" PreviewKeyDown="ButtonPreview_Down" PreviewKeyUp="ButtonPreview_Up"> 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="920"/>
             </Grid.ColumnDefinitions>

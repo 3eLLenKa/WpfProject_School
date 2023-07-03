@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfProject_School.Core;
+using WpfProject_School.Core.CoreClasses;
 using WpfProject_School.MVVM.View;
 
 namespace WpfProject_School.MVVM.ViewModel

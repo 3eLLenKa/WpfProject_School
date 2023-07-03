@@ -6,6 +6,9 @@ using WpfProject_School.Levels.RussianLevels.LettersLevels;
 using WpfProject_School.Levels.RussianLevels.WordsLevels;
 using WpfProject_School.Levels.RussianLevels.NumbersAndSymbolsLevels;
 using WpfProject_School.Levels.RussianLevels.PunctuationMarksLevels;
+using WpfProject_School.Core.RussianLevelsClasses;
+using WpfProject_School.Core;
+using WpfProject_School.Core.CoreClasses;
 
 namespace WpfProject_School.MVVM.View
 {
@@ -21,6 +24,13 @@ namespace WpfProject_School.MVVM.View
 
         //EventArgs letters levels buttons
 
+        RussianLevelsContent russianContent = new RussianLevelsContent();
+
+        RussianLettersLevel russianLetters = new RussianLettersLevel();
+        RussianWordsLevel russianWords = new RussianWordsLevel();
+        RussianNumbersAndSymbolsLevel russianNumbers = new RussianNumbersAndSymbolsLevel();
+        RussianPunctuationLevel russianPunctuation = new RussianPunctuationLevel();
+
         private void WindowSettings()
         {
             var mainWindow = Application.Current.MainWindow as MainWindow;
@@ -34,48 +44,50 @@ namespace WpfProject_School.MVVM.View
         {
             WindowSettings();
             NavigationService.GetNavigationService(this).Navigate(new FirstLettersLevelPage());
+            russianLetters.letters = russianContent.firstLetters;
         }
 
         private void SecondLettersPageNavigation(object sender, RoutedEventArgs e)
         {
             WindowSettings();
-            NavigationService.GetNavigationService(this).Navigate(new SecondLettersLevelPage());
+            russianLetters.letters = russianContent.secondLetters;
+            NavigationService.GetNavigationService(this).Navigate(new FirstLettersLevelPage());
         }
 
         private void ThirdLettersPageNavigation(object sender, RoutedEventArgs e)
         {
             WindowSettings();
-            NavigationService.GetNavigationService(this).Navigate(new ThirdLettersLevelPage());
+            NavigationService.GetNavigationService(this).Navigate(new FirstLettersLevelPage());
         }
 
         private void FourthLettersPageNavigation(object sender, RoutedEventArgs e)
         {
             WindowSettings();
-            NavigationService.GetNavigationService(this).Navigate(new FourthLettersLevelPage());
+            NavigationService.GetNavigationService(this).Navigate(new FirstLettersLevelPage());
         }
 
         private void FifthLettersPageNavigation(object sender, RoutedEventArgs e)
         {
             WindowSettings();
-            NavigationService.GetNavigationService(this).Navigate(new FifthLettersLevelPage());
+            NavigationService.GetNavigationService(this).Navigate(new FirstLettersLevelPage());
         }
 
         private void SixthLettersPageNavigation(object sender, RoutedEventArgs e)
         {
             WindowSettings();
-            NavigationService.GetNavigationService(this).Navigate(new SixthLettersLevelPage());
+            NavigationService.GetNavigationService(this).Navigate(new FirstLettersLevelPage());
         }
 
         private void SeventhLettersPageNavigation(object sender, RoutedEventArgs e)
         {
             WindowSettings();
-            NavigationService.GetNavigationService(this).Navigate(new SeventhLettersLevelPage());
+            NavigationService.GetNavigationService(this).Navigate(new FirstLettersLevelPage());
         }
 
         private void EighthLettersPageNavigation(object sender, RoutedEventArgs e)
         {
             WindowSettings();
-            NavigationService.GetNavigationService(this).Navigate(new EighthLettersLevelPage());
+            NavigationService.GetNavigationService(this).Navigate(new FirstLettersLevelPage());
         }
 
 
